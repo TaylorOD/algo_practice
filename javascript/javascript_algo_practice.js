@@ -23,3 +23,44 @@
 
 // output = twoNumberSum([3, 5, -14, 8, 11, 1, -1, 6], 10)
 // console.log(output)
+
+// Bubble Sort
+
+// this doesnt work I need to learn for loops
+const bubbleSort = function (array) {
+  let sorted = false
+  let index = 0
+  while (!sorted) {
+    sorted = true
+  }
+  while (index < bubble.length - 1) {
+    if (bubble[index] > bubble[index + 1]) {
+      x = bubble[index]
+      bubble[index] = bubble[index + 1]
+      bubble[index + 1] = x
+    }
+    index += 1
+  }
+  return array
+}
+console.log(
+  bubbleSort([
+    1,
+    0,
+    -10,
+    10000,
+    993423,
+    234238423402384,
+    11,
+    11,
+    12,
+    12,
+    1239012309128312,
+    1223,
+    45065,
+    55,
+    0344342,
+    0234,
+    111,
+  ])
+)
