@@ -27,40 +27,56 @@
 // Bubble Sort
 
 // this doesnt work I need to learn for loops
-const bubbleSort = function (array) {
-  let sorted = false
-  let index = 0
-  while (!sorted) {
-    sorted = true
-  }
-  while (index < bubble.length - 1) {
-    if (bubble[index] > bubble[index + 1]) {
-      x = bubble[index]
-      bubble[index] = bubble[index + 1]
-      bubble[index + 1] = x
-    }
-    index += 1
-  }
-  return array
+// const bubbleSort = function (array) {
+//   let sorted = false
+//   let index = 0
+//   while (!sorted) {
+//     sorted = true
+//   }
+//   while (index < bubble.length - 1) {
+//     if (bubble[index] > bubble[index + 1]) {
+//       x = bubble[index]
+//       bubble[index] = bubble[index + 1]
+//       bubble[index + 1] = x
+//     }
+//     index += 1
+//   }
+//   return array
+// }
+// console.log(
+//   bubbleSort([
+//     1,
+//     0,
+//     -10,
+//     10000,
+//     993423,
+//     234238423402384,
+//     11,
+//     11,
+//     12,
+//     12,
+//     1239012309128312,
+//     1223,
+//     45065,
+//     55,
+//     0344342,
+//     0234,
+//     111,
+//   ])
+// )
+
+// A Very Big Sum
+
+let numbers = [1000000001, 1000000002, 1000000003, 1000000004, 1000000005]
+
+function aVeryBigSum(ar) {
+
+  let result = 0
+  ar.forEach(function (number) {
+    result = result + number
+  })
+  return result
+
 }
-console.log(
-  bubbleSort([
-    1,
-    0,
-    -10,
-    10000,
-    993423,
-    234238423402384,
-    11,
-    11,
-    12,
-    12,
-    1239012309128312,
-    1223,
-    45065,
-    55,
-    0344342,
-    0234,
-    111,
-  ])
-)
+
+console.log(aVeryBigSum(numbers))

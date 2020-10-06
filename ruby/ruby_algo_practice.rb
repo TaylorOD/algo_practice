@@ -11,3 +11,11 @@ def staircase(n)
     n -= 1
   end
 end
+
+function aVeryBigSum(ar) {
+  let result = 0
+  ar.forEach (function (number) {
+               result = result + number
+             })
+  return result
+}
