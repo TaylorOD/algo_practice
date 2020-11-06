@@ -47,12 +47,12 @@
 
 # p is_palindrome("racecar")
 
-numbers = ["a", "b", "c", "d"]
-result = []
+# numbers = ["a", "b", "c", "d"]
+# result = []
 
-numbers.each do |number|
-  numbers.each do |number_two|
-    result << number + number_two
-  end
-end
-p result
+# numbers.each do |number|
+#   numbers.each do |number_two|
+#     result << number + number_two
+#   end
+# end
+# p result
