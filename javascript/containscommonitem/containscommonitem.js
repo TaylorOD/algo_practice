@@ -27,20 +27,17 @@ const containsCommonItem = function (array1, array2) {
   let objectMap = {}
 
   for (let i = 0; i < array1.length; i += 1) {
-    if (!objectMap === array1[i]) {
-      objectMap[array1[i]]
-      objectMap.array1 = true
+    if (!objectMap[array1[i]]) {
+      const item = [array1[i]]
+      objectMap[item] = true
     }
   }
-
   for (let j = 0; j < array2.length; j += 1) {
     if (objectMap[array2[j]]) {
       return true
     }
   }
-  
   return false
-
 }
 
 
