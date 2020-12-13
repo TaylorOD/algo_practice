@@ -106,3 +106,24 @@
 // }
 // // run function
 // console.log(isPalindrome("racecar"))
+
+
+/* SOLUTION 1 Pseudocode out your solution */
+
+
+
+/* SOLUTION 2 Start a time and track how long it takes you. This solution is meant to be the ugly solution. The one that you get working the fastest at any cost */
+function reduceDirections2(directions) {
+  // TODO: ADD LOGIC HERE
+  return ['']
+}
+
+/* SOLUTION 3 Review your previous solution and refactor it. Do you best to not reach for outside help. I want the best solution you know how to write with your current knowledge */
+function reduceDirections3(directions) {
+  // TODO: ADD LOGIC HERE
+  return ['']
+}
+
+
+
+
