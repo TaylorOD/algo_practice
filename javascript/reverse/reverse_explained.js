@@ -8,7 +8,7 @@ function reverse (string) {
   if (!string || string.length < 2 || typeof string !== "string") {
     return false
   } else {
-    return string.split().reverse().join("")
+    return string.split("").reverse().join("")
   }
 
 }
