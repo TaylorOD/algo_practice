@@ -18,6 +18,7 @@ const showMeTheMoney = function (string) {
   }
 }
 // Call the function with the input string which will return false
+console.log(showMeTheMoney("i hate $ but i love money i know i know im crazy"))
 console.log(showMeTheMoney("abcdefghijklmnopqrstuvwxyz"))
 
 // Using a while loop
@@ -38,4 +39,5 @@ const showMeTheMoneyLoop = function (string) {
   return false
 }
 // Call the function with the input string which will return false
+console.log(showMeTheMoneyLoop("i hate $ but i love money i know i know im crazy"))
 console.log(showMeTheMoneyLoop("abcdefghijklmnopqrstuvwxyz"))
