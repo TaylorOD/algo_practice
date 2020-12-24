@@ -4,14 +4,22 @@
 // Example: 
 // addUp(600) ➞ 180300
 
+// Create addUp function that takes in a variable 
 function addUp(num) {
-	let sum = 0
-	let index = 1
+  // Create sum variable
+  let sum = 0
+  // Create index variable
+  let index = 1
+  // Create while loop that will continue to loop through the array until index is equal to the input num
 	while (index <= num) {
-		sum = sum + index
+    // Make the sum equal the sum plus the index on each loop
+    sum = sum + index
+    // Increment the index on each loop
 		index += 1
-	}
+  }
+  // Return sum variable 
 	return sum
 }
 
+// Call AddUp function with input variable 
 console.log(addUp(600))
