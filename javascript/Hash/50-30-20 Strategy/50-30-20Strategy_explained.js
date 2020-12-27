@@ -9,15 +9,21 @@
 
 // fiftyThirtyTwenty(13450) ➞ { "Needs": 6725, "Wants": 4035, "Savings": 2690 }
 
+// Create function that takes in ATI variable 
 function fiftyThirtyTwenty(ati) {
+  // Create Result hash
 	let result = {}
-	
-	result.Needs = ati * .50
-	result.Wants = ati * .30
+  
+  // Create Needs value that equals 50% of ATI
+  result.Needs = ati * .50
+  // Create Wants value that equals 30% of ATI
+  result.Wants = ati * .30
+  // Create Savings value that equals 20% of ATI
 	result.Savings = ati * .20
-	
-	
+	// Return result variable 
 	return result
 }
-
+// Call function with example variables 
 console.log(fiftyThirtyTwenty(10000))
+console.log(fiftyThirtyTwenty(5000))
+console.log(fiftyThirtyTwenty(13450))
