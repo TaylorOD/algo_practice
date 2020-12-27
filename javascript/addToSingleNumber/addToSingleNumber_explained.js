@@ -21,5 +21,5 @@ function addUp(num) {
 	return sum
 }
 
-// Call AddUp function with input variable 
+// Call AddUp function with input variable a
 console.log(addUp(600))
