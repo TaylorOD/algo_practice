@@ -17,8 +17,10 @@ function fiftyThirtyTwenty(ati) {
 	result.Wants = ati * .30
 	result.Savings = ati * .20
 	
-	
 	return result
 }
 
 console.log(fiftyThirtyTwenty(10000))
+console.log(fiftyThirtyTwenty(10000))
+console.log(fiftyThirtyTwenty(5000))
+console.log(fiftyThirtyTwenty(13450))
