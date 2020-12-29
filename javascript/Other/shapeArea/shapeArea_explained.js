@@ -13,7 +13,7 @@
 function shapeArea(n) {
   // return n*n because we want to spread outwards based on the given n. Add n-1 * n-1 to create the edges of the shape.
   // 3*3 is 9. Plus (3-1)*(3-1). 13 is the total area.
-  return n*n + (n-1)*(n-1)
+  return n * n + (n - 1) * (n - 1)
 }
 // call the ShapeArea function
 console.log(shapeArea(3))
