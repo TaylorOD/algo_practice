@@ -23,25 +23,39 @@
 
 // Resulting in 9 steps. So for input n = 12, the return value would be 9.
 
-
+// Create function that takes in input number
 const collatzConjecture = function (number) {
+  // Create a variable that we will use to store even results
   let numberHalved = 0
+  // Create a variable that we will use to store odd results
   let numberMultipliedByThree = 0
+  // Create variable that will represent the input number that we can use in out while loop
   let currentNumber = number
+  // Create variable that we will increment on each loop
   let counter = 0
 
+  // Create while loop that will run until the number hits 1
   while (currentNumber > 1) {
+    // If statement that will run if the current number is even
     if (currentNumber % 2 === 0) {
+      // If the currentNumber is even make numberHalved equal to the currentNumber divided by 2
       numberHalved = currentNumber / 2
+      // Current number is now equal to numberHalved
       currentNumber = numberHalved
+      // Increment the counter
       counter += 1
+      // Else if statement that runs if the currentNumber is odd
     } else if (currentNumber % 2 === 1) {
+      // numberMultiplied is now equal to the current number multiplied by 3 + 1
       numberMultipliedByThree = (currentNumber * 3) + 1
+      // CurentNumber is equal to numberMultipliedByThre
       currentNumber = numberMultipliedByThree
+      // Increment the counter
       counter += 1
     }
   }
+  // Return the counter variable which will be the number of steps we took to get to 1
   return counter
 }
-
+// Call the function with a test input
 console.log(collatzConjecture(12))
