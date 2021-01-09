@@ -15,12 +15,12 @@
 const popularPosts = function (arrayOfHashes) {
   let resultPosts = []
 
-  for (let posts in arrayOfHashes) {
-    if (arrayOfHashes[posts] >= 1000) {
-      resultPosts.push(arrayOfHashes)
+  for (let i = 0; i < arrayOfHashes.length; i += 1) {
+    if (arrayOfHashes[i].likes >= 1000) {
+      resultPosts.push(arrayOfHashes[i])
     }
   }
-
+  
   return resultPosts
 }
 
