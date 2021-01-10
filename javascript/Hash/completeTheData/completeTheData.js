@@ -23,13 +23,17 @@
 // ]
 
 const completeTheData = function (arrayOfHashes) {
-  let resultArrayOfHashes = {}
-
+  let users = {403: "Aunty Em", 231: "Joelle P.", 989: "Lyndon Johnson", 111: "Patti Q."}
+  
   for (let i = 0; i < arrayOfHashes.length; i += 1) {
-    console.log(arrayOfHashes[i].submitted_by)
+    for (let userID in users) {
+      if (users[userID] === users[arrayOfHashes[i].submitted_by]) {
+        arrayOfHashes[i].submitted_by = users[userID]
+      }
+    }
   }
+  return arrayOfHashes
 
-  return resultArrayOfHashes
 }
 
 console.log(completeTheData( [
