@@ -22,18 +22,17 @@
 // {title: 'Mondays are the worst', submitted_by: "Aunty Em", likes: 644}
 // ]
 
-const completeTheData = function (arrayOfHashes) {
+const completeTheData = function (postDataArrayOfHashes) {
   let users = {403: "Aunty Em", 231: "Joelle P.", 989: "Lyndon Johnson", 111: "Patti Q."}
   
-  for (let i = 0; i < arrayOfHashes.length; i += 1) {
+  for (let i = 0; i < postDataArrayOfHashes.length; i += 1) {
     for (let userID in users) {
-      if (users[userID] === users[arrayOfHashes[i].submitted_by]) {
-        arrayOfHashes[i].submitted_by = users[userID]
+      if (users[userID] === users[postDataArrayOfHashes[i].submitted_by]) {
+        postDataArrayOfHashes[i].submitted_by = users[userID]
       }
     }
   }
-  return arrayOfHashes
-
+  return postDataArrayOfHashes
 }
 
 console.log(completeTheData( [
