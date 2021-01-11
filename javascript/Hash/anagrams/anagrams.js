@@ -12,12 +12,9 @@
 // Uses a .includes which most interviewers would not like
 const anagramsUsingIncludes = function (stringOne, stringTwo) {
   let result = true
-  
-  let stringOneSplit = stringOne.split("")
-  let stringTwoSplit = stringTwo.split("")
 
-  for (let i = 0; i < stringOneSplit.length; i += 1) {
-    if (!stringOneSplit.includes(stringTwoSplit[i])) {
+  for (let i = 0; i < stringOne.length; i += 1) {
+    if (!stringOne.includes(stringTwo[i])) {
       result = false
     }
   }
@@ -31,18 +28,16 @@ console.log(anagramsUsingIncludes("frog", "bear"))
 const anagrams = function (stringOne, stringTwo) {
   let result = true
   
-  let stringOneSplit = stringOne.split("")
-  let stringTwoSplit = stringTwo.split("")
   let stringOneHash = {}
 
   for (let i = 0; i < stringOne.length; i += 1) {
-    if (!stringOneHash[stringOneSplit[i]]) {
-      stringOneHash[stringOneSplit[i]] = 1
+    if (!stringOneHash[stringOne[i]]) {
+      stringOneHash[stringOne[i]] = 1
     }
   }
 
-  for (let j = 0; j < stringOneSplit.length; j += 1) {
-    if (!stringOneHash[stringTwoSplit[j]]) {
+  for (let j = 0; j < stringOne.length; j += 1) {
+    if (!stringOneHash[stringTwo[j]]) {
       result = false
     }
   }

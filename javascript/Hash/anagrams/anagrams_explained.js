@@ -9,27 +9,30 @@
 // Input: “frog”, “bear”
 // Output: false
 
-// 
+// Create function that takes in two strings
 const anagrams = function (stringOne, stringTwo) {
+  // Create results variable that we will set to true by default
   let result = true
-  
-  let stringOneSplit = stringOne.split("")
-  let stringTwoSplit = stringTwo.split("")
+  // Create an empty object we will use to store the values of StringOne
   let stringOneHash = {}
 
+  // Create a for loop that will loop over stringOne and add each item to our hash/object
   for (let i = 0; i < stringOne.length; i += 1) {
-    if (!stringOneHash[stringOneSplit[i]]) {
-      stringOneHash[stringOneSplit[i]] = 1
+    if (!stringOneHash[stringOne[i]]) {
+      stringOneHash[stringOne[i]] = 1
     }
   }
 
-  for (let j = 0; j < stringOneSplit.length; j += 1) {
-    if (!stringOneHash[stringTwoSplit[j]]) {
+  // Create a for loop that will run the length of stringOne
+  for (let j = 0; j < stringOne.length; j += 1) {
+    // If our full Hash does not include a character from stringTwo then set the result to false
+    if (!stringOneHash[stringTwo[j]]) {
       result = false
     }
   }
+  // Return the result
   return result
 }
-
+// Call our function with one working and non working test input
 console.log(anagrams("silent", "listen"))
 console.log(anagrams("frog", "bear"))
