@@ -8,3 +8,20 @@
 
 // Input: “frog”, “bear”
 // Output: false
+
+const anagrams = function (stringOne, stringTwo) {
+  let result = true
+  
+  let stringOneSplit = stringOne.split("")
+  let stringTwoSplit = stringTwo.split("")
+
+  for (let i = 0; i < stringOneSplit.length; i += 1) {
+    if (!stringOneSplit.includes(stringTwoSplit[i])) {
+      result = false
+    }
+  }
+  return result
+}
+
+console.log(anagrams("silent", "listen"))
+console.log(anagrams("frog", "bear"))
