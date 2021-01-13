@@ -9,7 +9,6 @@
 const adjacentElementsProduct = function (inputArray) {
   // Create result array that contains the product of the first two inputs
   let result = [inputArray[0] * inputArray[1]]
-
   // Create for loop to loop through each input in the array. It stops at array.length - 1 because we are using i + 1 as an input below
   for (let i = 0; i < inputArray.length - 1; i += 1) {
     // create value for current pair to be compares to result array. This is inputArray[i] * inputArray[i + 1] which will always be next to each other
