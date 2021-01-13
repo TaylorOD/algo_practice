@@ -17,7 +17,11 @@
 // }
 
 const ETL = function (array, number) {
-
+  let result = {}
+  for (let i = 0; i < array.length; i += 1) {
+    result[array[i]] = number
+  }
+  return result
 }
 
 console.log(ETL(["a", "e", "i", "o", "u"], 1))
