@@ -15,3 +15,18 @@
 // 'o' => 1,
 // 'u' => 1
 // }
+
+// Create function that takes in an array and a number
+const ETL = function (array, number) {
+  // Create an empty result hash which we will use to store our key value pairs
+  let result = {}
+  // Create a for loop to loop over the input array
+  for (let i = 0; i < array.length; i += 1) {
+    // Populate the hash with the given array element as the key and the number as the value
+    result[array[i]] = number
+  }
+  // Return the result hash
+  return result
+}
+// Call the function with the given test input
+console.log(ETL(["a", "e", "i", "o", "u"], 1))
