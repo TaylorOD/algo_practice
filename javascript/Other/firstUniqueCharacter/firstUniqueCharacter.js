@@ -24,12 +24,12 @@ const firstUniqueCharacter = function (string) {
       stringAsHash[string[i]] += 1
     }
   }
-
-  for (let number in stringAsHash) {
+  
+   for (let number in stringAsHash) {
     if (stringAsHash[number] === 1) {
-      return number
+      return string.indexOf(number);
     }
-  }
+   }
 
   return -1
 }
