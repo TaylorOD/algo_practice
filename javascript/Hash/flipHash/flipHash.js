@@ -5,9 +5,11 @@
 
 const flipHash = function (inputHash) {
   let result = {}
+
   for (let key in inputHash) {
-    
+    result[inputHash[key]] = key
   }
+  
   return result
 }
 
