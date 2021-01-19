@@ -25,11 +25,20 @@ const firstUniqueCharacter = function (string) {
     }
   }
   
-   for (let number in stringAsHash) {
-    if (stringAsHash[number] === 1) {
-      return string.indexOf(number);
+  // Returns index but is not O(N) due to calling indexOf
+  //  for (let number in stringAsHash) {
+  //   if (stringAsHash[number] === 1) {
+  //     return string.indexOf(number);
+  //   }
+  //  }
+
+  for (let j = 0; j < string.length; j += 1) {
+  let char = string.charAt(j)
+    if (stringAsHash[char] === 1) {
+      return j
     }
-   }
+  }
+  
 
   return -1
 }

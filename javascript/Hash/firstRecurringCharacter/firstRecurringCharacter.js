@@ -39,3 +39,4 @@ console.log(firstRecurringCharacter([2, 5, 1, 2, 3, 5, 1, 2, 4]))
 console.log(firstRecurringCharacterHash([2, 5, 1, 2, 3, 5, 1, 2, 4]))
 console.log(firstRecurringCharacter([1, 5, 5, 1, 3, 4, 6]))
 console.log(firstRecurringCharacterHash([1, 5, 5, 1, 3, 4, 6]))
+
