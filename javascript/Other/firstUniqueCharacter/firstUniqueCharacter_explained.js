@@ -13,3 +13,26 @@
 // (The "l" and "o" are repeated, so the first non-repeating character is the "v", which is at index 2.)
 
 // Note: You may assume the string contain only lowercase letters.
+
+const firstUniqueCharacter = function (string) {
+  let stringAsHash = {}
+
+  for (let i = 0; i < string.length; i += 1) {
+    if (!stringAsHash[string[i]]) {
+      stringAsHash[string[i]] = 1
+    } else {
+      stringAsHash[string[i]] += 1
+    }
+  }
+
+  for (let j = 0; j < string.length; j += 1) {
+  let char = string.charAt(j)
+    if (stringAsHash[char] === 1) {
+      return j
+    }
+  }
+
+  return -1
+}
+
+console.log(firstUniqueCharacter("loveleetcode"))

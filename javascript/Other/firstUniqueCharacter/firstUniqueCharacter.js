@@ -24,6 +24,13 @@ const firstUniqueCharacter = function (string) {
       stringAsHash[string[i]] += 1
     }
   }
+
+  // Returns the letter rather than the index
+  // for (let number in stringAsHash) {
+  //   if (stringAsHash[number] === 1) {
+  //     return number
+  //   }
+  // }
   
   // Returns index but is not O(N) due to calling indexOf
   //  for (let number in stringAsHash) {
@@ -38,7 +45,6 @@ const firstUniqueCharacter = function (string) {
       return j
     }
   }
-  
 
   return -1
 }
