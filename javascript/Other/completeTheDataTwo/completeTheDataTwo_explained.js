@@ -27,20 +27,28 @@
 // {title: 'Mondays are the worst', submitted_by: "Aunty Em", likes: 644}
 // ]
 
+// Create function that takes in our two input data array of objects
 const completeTheDataTwo = function (inputPostArray, inputUserArray) {
+  // Create a results array
   let results = []
   
+  // Create a for loop that will loop over the input post array
   for (let i = 0; i < inputPostArray.length; i += 1) {
+    // Create a for loop that will loop over the input user array
     for (let j = 0; j < inputUserArray.length; j += 1) {
+      // If the inputPostArray currently selected submitted by is equal to the inputUserArray currently selected user_id
       if (inputPostArray[i].submitted_by === inputUserArray[j].user_id) {
+        // Then save the inputPostArray submitted_by as the inputUserArray name element
         inputPostArray[i].submitted_by = inputUserArray[j].name
       }
     }
   }
+  // Add our updated inputPostArray to our results variable
   results.push(inputPostArray)
+  // Return the results variable
   return results
 }
-
+// Call our function with the givin input data
 console.log(completeTheDataTwo([
   {title: 'Me Eating Pizza', submitted_by: 231, likes: 1549},
   {title: 'i never knew how cool i was until now', submitted_by: 989, likes: 3},
