@@ -14,6 +14,18 @@
 // 'u': 1
 // }
 
+const hashAToHashB = function (inputHash) {
+  let result = {}
+
+  for (let i = 0; i < inputHash[1].length; i += 1) {
+    result[inputHash[1][i].toLowerCase()] = 1
+  }
+
+  return result
+}
+
+console.log(hashAToHashB({ 1: ["A", "E", "I", "O", "U"] }))
+
 // Input:
 // {
 // 1: ["A", "E"],
