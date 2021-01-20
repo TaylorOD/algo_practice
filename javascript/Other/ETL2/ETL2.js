@@ -53,14 +53,15 @@ const hashAToHashBTwo = function (inputHash) {
 
 console.log(hashAToHashBTwo({ 1: ["A", "E"], 2: ["D", "G"] }))
 
-// Input:
-// 1: ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T"],
-// 2: ["D", "G"],
-// 3: ["B", "C", "M", "P"],
-// 4: ["F", "H", "V", "W", "Y"],
-// 5: ["K"],
-// 8: ["J", "X"],
-// 10: ["Q", "Z"]
+// Input: 
+// {
+//   1: ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T"],
+//   2: ["D", "G"],
+//   3: ["B", "C", "M", "P"],
+//   4: ["F", "H", "V", "W", "Y"],
+//   5: ["K"],
+//   8: ["J", "X"],
+//   10: ["Q", "Z"]
 // }
 
 // Output:
@@ -92,3 +93,29 @@ console.log(hashAToHashBTwo({ 1: ["A", "E"], 2: ["D", "G"] }))
 // 'y': 4,
 // 'z': 10
 // }
+
+const hashAToHashBThree = function (inputHash) { // Not finished
+  let result = {}
+  for (let i = 0; i < inputHash; i += 1) {
+    result[inputHash[1][i].toLowerCase()] = 1
+    result[inputHash[3][i].toLowerCase()] = 3
+    result[inputHash[3][i].toLowerCase()] = 3
+    result[inputHash[2][i].toLowerCase()] = 2
+
+    // result[inputHash[5][i].toLowerCase()] = 5
+    // result[inputHash[8][i].toLowerCase()] = 8
+    // result[inputHash[10][i].toLowerCase()] = 10
+
+  }
+  return result
+}
+
+console.log(hashAToHashBThree({
+  1: ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T"],
+  2: ["D", "G"],
+  3: ["B", "C", "M", "P"],
+  4: ["F", "H", "V", "W", "Y"],
+  5: ["K"],
+  8: ["J", "X"],
+  10: ["Q", "Z"]
+}))
