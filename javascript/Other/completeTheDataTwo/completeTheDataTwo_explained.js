@@ -28,7 +28,17 @@
 // ]
 
 const completeTheDataTwo = function (inputPostArray, inputUserArray) {
-
+  let results = []
+  
+  for (let i = 0; i < inputPostArray.length; i += 1) {
+    for (let j = 0; j < inputUserArray.length; j += 1) {
+      if (inputPostArray[i].submitted_by === inputUserArray[j].user_id) {
+        inputPostArray[i].submitted_by = inputUserArray[j].name
+      }
+    }
+  }
+  results.push(inputPostArray)
+  return results
 }
 
 console.log(completeTheDataTwo([
