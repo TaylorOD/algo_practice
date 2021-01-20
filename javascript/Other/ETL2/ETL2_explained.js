@@ -1,13 +1,11 @@
 // You are given a hash in format #A, and you are to return the same data as a hash using format #B, as specified below:
 
 // Input:
-
 // {
 // 1: ["A", "E", "I", "O", "U"]
 // }
 
 // Output:
-
 // {
 // 'a': 1,
 // 'e': 1,
@@ -15,15 +13,14 @@
 // 'o': 1,
 // 'u': 1
 // }
-// Input:
 
+// Input:
 // {
 // 1: ["A", "E"],
 // 2: ["D", "G"]
 // }
 
 // Output:
-
 // {
 // 'a': 1,
 // 'd': 2,
@@ -32,7 +29,6 @@
 // }
 
 // Input:
-
 // 1: ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T"],
 // 2: ["D", "G"],
 // 3: ["B", "C", "M", "P"],
@@ -43,7 +39,6 @@
 // }
 
 // Output:
-
 // {
 // 'a': 1,
 // 'b': 3,
