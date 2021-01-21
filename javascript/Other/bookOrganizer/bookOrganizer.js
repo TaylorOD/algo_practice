@@ -28,3 +28,38 @@
 // {title: "The Great Gatsby", year: 1925 }
 // ]
 // }
+
+const bookOrganizer = function (inputBookArray) {
+  let result = {}
+  
+  // let tolkien = inputBookArray.filter(inputBookArray => inputBookArray.author === "J. R. R. Tolkien")
+
+  // result["J. R. R. Tolkien"] = [{ title: inputBookArray[0].title, year: inputBookArray[0].year }, 
+  // { title: inputBookArray[1].title, year: inputBookArray[1].year },
+  // { title: inputBookArray[2].title, year: inputBookArray[2].year },
+  // ]
+
+  for (let i = 0; i < inputBookArray.length; i += 1) {
+    if (inputBookArray[i].author === "J. R. R. Tolkien") {
+      result["J. R. R. Tolkien"] = [{ title: inputBookArray[i].title, year: inputBookArray[i].year }, 
+      ]    
+    } else if (inputBookArray[i].author === "Harper Lee") {
+      result["Harper Lee"] = { title: inputBookArray[i].title, year: inputBookArray[i].year }
+    } else if (inputBookArray[i].author === "George Orwell") {
+      result["George Orwell"] = { title: inputBookArray[i].title, year: inputBookArray[i].year }
+    } else if (inputBookArray[i].author === "F. Scott Fitzgerald") {
+      result["F. Scott Fitzgerald"] = { title: inputBookArray[i].title, year: inputBookArray[i].year }
+    } 
+  }
+  return result
+}
+
+console.log(bookOrganizer([
+  {title: "The Lord of the Rings", author: "J. R. R. Tolkien", year: 1954 },
+  {title: "To Kill a Mockingbird", author: "Harper Lee", year: 1960 },
+  {title: "1984", author: "George Orwell", year: 1949 },
+  {title: "Go Set a Watchman", author: "Harper Lee", year: 2015 },
+  {title: "The Hobbit", author: "J. R. R. Tolkien", year: 1937 },
+  {title: "The Great Gatsby", author: "F. Scott Fitzgerald", year: 1925 },
+  {title: "The Two Towers", author: "J. R. R. Tolkien", year: 1954 }
+  ]))
