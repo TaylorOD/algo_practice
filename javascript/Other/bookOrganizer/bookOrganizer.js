@@ -40,17 +40,10 @@ const bookOrganizer = function (inputBookArray) {
   // ]
 
   for (let i = 0; i < inputBookArray.length; i += 1) {
-    if (inputBookArray[i].author === "J. R. R. Tolkien") {
-      result["J. R. R. Tolkien"] = [{ title: inputBookArray[i].title, year: inputBookArray[i].year }, 
-      ]    
-    } else if (inputBookArray[i].author === "Harper Lee") {
-      result["Harper Lee"] = [{ title: inputBookArray[i].title, year: inputBookArray[i].year }, 
-    ]
-    } else if (inputBookArray[i].author === "George Orwell") {
-      result["George Orwell"] = [{ title: inputBookArray[i].title, year: inputBookArray[i].year },
-    ]
-    } else if (inputBookArray[i].author === "F. Scott Fitzgerald") {
-      result["F. Scott Fitzgerald"] = [{title: inputBookArray[i].title, year: inputBookArray[i].year}]
+    if (!result[inputBookArray[i].author]) {
+      result[inputBookArray[i].author] = ([{ title: inputBookArray[i].title, year: inputBookArray[i].year }])
+    } else {
+      result[inputBookArray[i].author].push({ title: inputBookArray[i].title, year: inputBookArray[i].year })
     }
   }
   return result
