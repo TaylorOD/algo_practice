@@ -31,13 +31,6 @@
 
 const bookOrganizer = function (inputBookArray) {
   let result = {}
-  
-  // let tolkien = inputBookArray.filter(inputBookArray => inputBookArray.author === "J. R. R. Tolkien")
-
-  // result["J. R. R. Tolkien"] = [{ title: inputBookArray[0].title, year: inputBookArray[0].year }, 
-  // { title: inputBookArray[1].title, year: inputBookArray[1].year },
-  // { title: inputBookArray[2].title, year: inputBookArray[2].year },
-  // ]
 
   for (let i = 0; i < inputBookArray.length; i += 1) {
     if (!result[inputBookArray[i].author]) {
