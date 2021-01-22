@@ -24,7 +24,22 @@
 // ]
 
 const etlThree = function (inputYoutubeArray, inputAuthorArray) {
-
+  let resultArray = []
+  for (let i = 0; i < inputAuthorArray.length; i += 1) {
+    for (let j = 0; j < inputAuthorArray.length; j += 1) {
+      if (inputYoutubeArray[i].views >= 100) {
+        if (inputYoutubeArray[i].author_id === inputAuthorArray[j].id) {
+          if (!resultArray[inputYoutubeArray[i]]) {
+            resultArray.push({title: inputYoutubeArray[i].title, views: inputYoutubeArray[i].views, author_name: inputAuthorArray[j].first_name + " " + inputAuthorArray[j].last_name})
+          } else {
+            resultArray.push({title: inputYoutubeArray[i].title, views: inputYoutubeArray[i].views, author_name: inputAuthorArray[j].first_name + " " + inputAuthorArray[j].last_name})
+          }
+        }
+      }
+    }
+  }
+  
+  return resultArray
 }
 
 console.log(etlThree([
