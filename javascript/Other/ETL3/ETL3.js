@@ -38,7 +38,6 @@ const etlThree = function (inputYoutubeArray, inputAuthorArray) {
       }
     }
   }
-  
   return resultArray
 }
 
