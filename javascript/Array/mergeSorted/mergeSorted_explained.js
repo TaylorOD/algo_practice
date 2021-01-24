@@ -7,3 +7,24 @@
 
 // Modified A : [1 5 6 8 9]
 
+const mergeSorted = function (inputArrayOne, inputArrayTwo) {
+  let result = []
+  let inputArrayOneIndex = 0
+  let inputArrayTwoIndex = 0
+  
+  while (inputArrayOneIndex < inputArrayOne.length || inputArrayTwoIndex < inputArrayTwo.length) {
+    if (typeof inputArrayOne[inputArrayOneIndex] === 'undefined') {
+        result.push(inputArrayTwo[inputArrayTwoIndex])
+        inputArrayTwoIndex += 1
+    } else if (inputArrayOne[inputArrayOneIndex] > inputArrayTwo[inputArrayTwoIndex]) {
+        result.push(inputArrayTwo[inputArrayTwoIndex])
+        inputArrayTwoIndex += 1
+    } else {
+        result.push(inputArrayOne[inputArrayOneIndex])
+        inputArrayOneIndex += 1
+    }
+  }
+  return result
+}
+
+console.log(mergeSorted([1, 5, 8], [6, 9]))

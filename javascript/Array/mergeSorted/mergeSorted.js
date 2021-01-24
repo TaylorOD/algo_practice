@@ -9,17 +9,19 @@
 
 const mergeSorted = function (inputArrayOne, inputArrayTwo) {
   let result = []
-
-  for (let i = 0; i < inputArrayOne.length; i += 1) {
-    // result.push(inputArrayOne[i])
-    for (let j = 0; j < inputArrayTwo.length; j += 1) {
-      if (inputArrayOne[i] < inputArrayTwo[j]) {
-        result.push(inputArrayOne[i])
-      } else if (inputArrayTwo[j] < inputArrayOne[i]) {
-        result.push(inputArrayTwo[j])
-      }
-      
+  let inputArrayOneIndex = 0
+  let inputArrayTwoIndex = 0
   
+  while (inputArrayOneIndex < inputArrayOne.length || inputArrayTwoIndex < inputArrayTwo.length) {
+    if (typeof inputArrayOne[inputArrayOneIndex] === 'undefined') {
+        result.push(inputArrayTwo[inputArrayTwoIndex])
+        inputArrayTwoIndex += 1
+    } else if (inputArrayOne[inputArrayOneIndex] > inputArrayTwo[inputArrayTwoIndex]) {
+        result.push(inputArrayTwo[inputArrayTwoIndex])
+        inputArrayTwoIndex += 1
+    } else {
+        result.push(inputArrayOne[inputArrayOneIndex])
+        inputArrayOneIndex += 1
     }
   }
   return result
