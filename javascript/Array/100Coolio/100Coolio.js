@@ -11,3 +11,19 @@
 
 // [1, 2, 3, 97, 98, 99]
 // [90, 20, 70, 100, 30, 80, 10]
+
+const coolio = function (inputArray) {
+  let pointerEnd = inputArray.length - 1
+
+  for (let i = 0; i < inputArray.length / 2; i += 1) {
+    if (inputArray[i] + inputArray[pointerEnd] === 100) {
+      pointerEnd -= 1
+    } 
+    return true
+  }
+  return false
+}
+
+console.log(coolio([1, 2, 3, 97, 98, 99]))
+console.log(coolio([90, 20, 70, 100, 30, 80, 10]))
+console.log(coolio([90, 20, 70, 100, 30, 80, 11]))
