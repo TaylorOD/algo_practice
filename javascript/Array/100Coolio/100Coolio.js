@@ -23,8 +23,7 @@ const coolio = function (inputArray) {
     } else {
       result = false
       break
-    }
-    
+    } 
   }
   return result
 }
