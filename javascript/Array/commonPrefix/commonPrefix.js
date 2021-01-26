@@ -17,9 +17,24 @@
 // All given inputs are in lowercase letters a-z.
 
 const commonPrefix = function (inputArrayOfStrings) {
-  let result = ""
+  
+  if (inputArrayOfStrings.length === 0) {
+    return ""
+  }
 
-  return result
+  for (let i = 0; i < inputArrayOfStrings[0].length; i += 1) {
+    for (let j = 0; j < inputArrayOfStrings.length; j += 1) {
+      if (inputArrayOfStrings[j][i] !== inputArrayOfStrings[0][i]) {
+        if (inputArrayOfStrings[j].slice(0, i).length === 0) {
+          return ""
+        } else {
+          return inputArrayOfStrings[j].slice(0, i)
+        }
+      }
+    }
+  }
+  return inputArrayOfStrings[0]
 }
 
-console.log(commonPrefix(["flower","flow","flight"]))
+console.log(commonPrefix(["flower", "flow", "flight"]))
+console.log(commonPrefix(["dog","racecar","car"]))
