@@ -40,3 +40,5 @@ const intersectionOfTwoArrays = function (inputArrayOne, inputArrayTwo) {
 }
 // Call the function with the two givin test inputs
 console.log(intersectionOfTwoArrays([1, 2, 3, 4, 5], [0, 2, 4, 6, 8]))
+
+// Time complexity is O(N)
