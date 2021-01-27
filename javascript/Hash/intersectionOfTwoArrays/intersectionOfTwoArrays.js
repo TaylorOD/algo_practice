@@ -13,7 +13,24 @@
 
 
 const intersectionOfTwoArrays = function (inputArrayOne, inputArrayTwo) {
+  let result = []
+  let allCharacters = {}
 
+  for (let i = 0; i < inputArrayOne.length; i += 1) {
+    if (!allCharacters[inputArrayOne[i]]) {
+      allCharacters[inputArrayOne[i]] = true
+    } else {
+      result.push(inputArrayOne[i])
+    }
+
+    if (!allCharacters[inputArrayTwo[i]]) {
+      allCharacters[inputArrayTwo[i]] = true
+    } else {
+      result.push(inputArrayTwo[i])
+    }
+  }
+
+  return result
 }
 
 console.log(intersectionOfTwoArrays([1, 2, 3, 4, 5], [0, 2, 4, 6, 8]))
