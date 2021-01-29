@@ -9,8 +9,22 @@
 // Output: false (While 1, 2, 3, and 4 altogether add up to 10, we're seeking just one pair of numbers.)
 
 const twoSumHash = function (inputArray) {
+  let result = []
+  let arrayNumbersHash = {}
 
+  for (let i = 0; i < inputArray.length; i += 1) {
+    if (!arrayNumbersHash[inputArray[i]]) {
+      arrayNumbersHash[inputArray[i]] = 1
+    }
+  }
+
+  for (let j = 0; j < inputArray.length; j += 1) {
+    if (inputArray[j] + arrayNumbersHash[inputArray[j]] === 10) {
+      result.push(inputArray[j], arrayNumbersHash[inputArray[j]])
+    }
+  }
+  return false
 }
 
 console.log(twoSumHash([2, 5, 3, 1, 0, 7, 11]))
-console.log(twoSumHash([1, 2, 3, 4, 5]))
+// console.log(twoSumHash([1, 2, 3, 4, 5]))
