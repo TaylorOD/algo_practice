@@ -10,17 +10,19 @@
 
 const twoSumHash = function (inputArray) {
   let result = []
+  let targetNumber = 10
   let arrayNumbersHash = {}
 
   for (let i = 0; i < inputArray.length; i += 1) {
     if (!arrayNumbersHash[inputArray[i]]) {
-      arrayNumbersHash[inputArray[i]] = 1
+      arrayNumbersHash[inputArray[i]] = true
     }
   }
 
   for (let j = 0; j < inputArray.length; j += 1) {
-    if (inputArray[j] + arrayNumbersHash[inputArray[j]] === 10) {
+    if (targetNumber - arrayNumbersHash[inputArray[j]]) {
       result.push(inputArray[j], arrayNumbersHash[inputArray[j]])
+      return result
     }
   }
   return false
