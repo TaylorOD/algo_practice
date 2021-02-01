@@ -25,11 +25,30 @@
 // {title: 'Review of the New "Unbreakable Mug"', views: 202, author_name: 'Ichabod Loadbearer' },
 // ]
 
-const ETL4 = function () {
-  let results = []
-
-  return results
-
+const ETL4 = function (inputVideoArray, inputAuthorArray) {
+let resultArray = []
+  for (let i = 0; i < inputAuthorArray.length; i += 1) {
+    for (let j = 0; j < inputAuthorArray.length; j += 1) {
+      if (inputVideoArray[i].views >= 100) {
+        if (inputVideoArray[i].author_id === inputAuthorArray[j].id) {
+          if (!resultArray[inputVideoArray[i]]) {
+            resultArray.push({
+              title: inputVideoArray[i].title,
+              views: inputVideoArray[i].views,
+              author_name: inputAuthorArray[j].first_name + " " + inputAuthorArray[j].last_name,
+            })
+          } else {
+            resultArray.push({
+              title: inputVideoArray[i].title,
+              views: inputVideoArray[i].views,
+              author_name: inputAuthorArray[j].first_name + " " + inputAuthorArray[j].last_name,
+            })
+          }
+        }
+      }
+    }
+  }
+return resultArray
 }
 
 console.log(
