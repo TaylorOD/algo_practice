@@ -11,17 +11,29 @@
 // Input: nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
 // Output: 5, (nums = [0, 1, 2, 3, 4])
 
+// Create function that takes in our inputArray
 const removeDups = function (inputArray) {
-  let nums = inputArray
+  // Create hash that we will use too store values from inputArray
+  let inputArrayAsHash = {}
 
-  for (let i = 0; i < inputArray.length - 1; i += 1) {
-    if (inputArray[i] === inputArray[i + 1]) {
-      inputArray.splice(inputArray[i], 1)
+  // Create a for loop to loop over inputArray
+  for (let i = 0; i < inputArray.length; i += 1) {
+    // If the element does already exist in the hash
+    if (inputArrayAsHash[inputArray[i]] !== undefined) {
+      // remove it
+      inputArray.splice(inputArrayAsHash[inputArray[i]], 1)
+      // Decrement the index
+      i--
+      // Set the new index value
+      inputArrayAsHash[inputArray[i]] = i
+      // Else set the new index value
+    } else {
+      inputArrayAsHash[inputArray[i]] = i
     }
   }
-
+  // Return the length and the array
   return [inputArray.length, inputArray]
 }
-
+// Call the function with our two test cases
 console.log(removeDups([1, 1, 2]))
 console.log(removeDups([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]))

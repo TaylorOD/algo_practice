@@ -12,14 +12,17 @@
 // Output: 5, (nums = [0, 1, 2, 3, 4])
 
 const removeDups = function (inputArray) {
-  let nums = inputArray
+  let inputArrayAsHash = {}
 
-  for (let i = 0; i < inputArray.length - 1; i += 1) {
-    if (inputArray[i] === inputArray[i + 1]) {
-      inputArray.splice(inputArray[i], 1)
+  for (let i = 0; i < inputArray.length; i += 1) {
+    if (inputArrayAsHash[inputArray[i]] !== undefined) {
+      inputArray.splice(inputArrayAsHash[inputArray[i]], 1)
+      i--
+      inputArrayAsHash[inputArray[i]] = i
+    } else {
+      inputArrayAsHash[inputArray[i]] = i
     }
   }
-
   return [inputArray.length, inputArray]
 }
 
