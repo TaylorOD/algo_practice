@@ -2,10 +2,17 @@
 // Write a recursive function that prints all the numbers and just the numbers.
 
 const subFolders = function (inputArray) {
-  console.log(inputArray)
+  inputArray.forEach(function(input) {
+    if (Array.isArray(input)) {
+      subFolders(input)
+    }
+    else {
+      console.log(input)
+    }
+  })
 }
 
-console.log(subFolders([
+subFolders([
   1,
   2,
   3,
@@ -23,4 +30,4 @@ console.log(subFolders([
       ], 30, 31
     ], 32
   ], 33
-]))
+])
