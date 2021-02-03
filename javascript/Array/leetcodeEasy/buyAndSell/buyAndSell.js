@@ -22,3 +22,17 @@
 // Input: [7,6,4,3,1]
 // Output: 0
 // Explanation: In this case, no transaction is done, i.e. max profit = 0.
+
+const buyAndSell = function (inputArray) {
+  let profit = 0
+  for (let i = 0; i < inputArray.length; i += 1) {
+    if (inputArray[i] > inputArray[i - 1]) {
+      profit += inputArray[i] - inputArray[i - 1]
+    }
+  }
+  return profit
+}
+
+console.log(buyAndSell([7, 1, 5, 3, 6, 4]))
+console.log(buyAndSell([1, 2, 3, 4, 5]))
+console.log(buyAndSell([7, 6, 4, 3, 1]))
