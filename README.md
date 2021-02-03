@@ -3,6 +3,6 @@ I used to do algo practice. I still do, but I used to, too.
 
 # Problems:
 Starter level: https://trello.com/b/smxNsfu6/algorithm-ladder
-Easy Level:
-Medium Level:
-Hard Level:
+Easy Level: https://leetcode.com/explore/interview/card/top-interview-questions-easy/
+Medium Level: https://leetcode.com/explore/interview/card/top-interview-questions-medium/
+Hard Level: https://leetcode.com/explore/interview/card/top-interview-questions-hard/
