@@ -22,3 +22,23 @@
 // Input: [7,6,4,3,1]
 // Output: 0
 // Explanation: In this case, no transaction is done, i.e. max profit = 0.
+
+// Create function that takes in an inputArray
+const buyAndSell = function (inputArray) {
+  // Create our profit var which we will use to keep track of the results that we will return
+  let profit = 0
+  // Create a for loop that will run the length of the input array
+  for (let i = 0; i < inputArray.length; i += 1) {
+    // if the current element in the input array is greater than the one before it (example one: if 5 is greater than 1 on the second loop) then the max profit will add the result of buying/selling those two elements.
+    // For test inputArray one: 1 is not greater than 7 so nothing happens, 5 is greater than 1 so 4 (the difference between the two) is added to max profit. 3 is not greater than 5. 6 is greater than 3 so 3 (the difference between the two) is added to profit (currently 4 from our first addition) to make it 7. Finally 4 is not greater than 6 so our final result is a profit of 7
+    if (inputArray[i] > inputArray[i - 1]) {
+      profit += inputArray[i] - inputArray[i - 1]
+    }
+  }
+  // Return profit
+  return profit
+}
+// Call the function with our three test cases
+console.log(buyAndSell([7, 1, 5, 3, 6, 4]))
+console.log(buyAndSell([1, 2, 3, 4, 5]))
+console.log(buyAndSell([7, 6, 4, 3, 1]))
