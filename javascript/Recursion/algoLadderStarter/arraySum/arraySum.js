@@ -4,7 +4,7 @@ const arraySum = function (inputArray) {
   if (inputArray.length === 1) {
     return inputArray[0]
   }
-  return inputArray[0] + arraySum(inputArray[(1, inputArray.length - 1)])
+  return inputArray[0] + arraySum(inputArray.splice(1))
 
 }
 
