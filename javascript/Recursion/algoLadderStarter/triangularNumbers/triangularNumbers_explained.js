@@ -13,7 +13,15 @@
 // Output:
 // 45
 
-const triangularNumbers = function (inputNumber) {}
-
+// Create a function that takes in a number
+const triangularNumbers = function (inputNumber) {
+  // If the input number has been decremented to 0 then return it - Base Case
+  if (inputNumber === 0) {
+    return inputNumber
+  }
+  // Else return the input Number plus our recursive call of our function which we will return with our input number - 1
+  return inputNumber + triangularNumbers(inputNumber - 1)
+}
+// Call our function with our two test cases
 console.log(triangularNumbers(7))
-// console.log(triangularNumbers(9))
+console.log(triangularNumbers(9))
