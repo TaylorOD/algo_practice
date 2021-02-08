@@ -14,8 +14,11 @@
 // 45
 
 const triangularNumbers = function (inputNumber) {
-
+  if (inputNumber === 0) {
+    return inputNumber
+  }
+  return inputNumber + triangularNumbers(inputNumber - 1)
 }
 
 console.log(triangularNumbers(7))
-// console.log(triangularNumbers(9))
+console.log(triangularNumbers(9))
