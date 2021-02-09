@@ -4,10 +4,13 @@
 // Input:
 // 3, 7
 // Output:
-//
+// 28
 
 const uniquePaths = function (rows, columns) {
-
+  if (rows === 1 || columns === 1) {
+    return 1
+  }
+  return uniquePaths(rows - 1, columns) + uniquePaths(rows, columns - 1)
 }
 
 console.log(uniquePaths(3, 7))
