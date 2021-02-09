@@ -4,10 +4,14 @@
 // Input:
 // "abcdefghijklmnopqrstuvwxyz"
 // Output:
-// 23
+// 22
 
 const xIndex = function (inputString) {
-
+  if (inputString[0] === "x") {
+    return 0
+  }
+  return xIndex(inputString.slice(1)) + 1
 }
 
 console.log(xIndex("abcdefghijklmnopqrstuvwxyz"))
+console.log(xIndex("zzx"))
