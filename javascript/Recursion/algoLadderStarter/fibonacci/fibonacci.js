@@ -6,10 +6,17 @@
 // Input:
 // 9
 // Output:
-// 55
+// 34
 
 const fibonacci = function (number, memo = {}) {
-
+  if (number === 0 || number === 1) {
+    return number
+  }
+  if (!memo[number]) {
+    memo[number] = fibonacci(number - 2, memo) + fibonacci(number - 1, memo)
+  }
+  return memo[number]
 }
 
 console.log(fibonacci(9))
+console.log(fibonacci(10))
