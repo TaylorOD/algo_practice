@@ -61,18 +61,23 @@
 # // Use recursion and memoization to avoid unnecessary recursion calls
 
 def add_until_100(input_array)
-  return 0 if input_array.length == 0
+  if input_array.length == 0
+    return 0
+  end
   if input_array[0] + add_until_100(input_array[1, input_array.length - 1]) > 100
+
+    # p add_until_100(input_array[1, input_array.length - 1])
     return add_until_100(input_array[1, input_array.length - 1])
   else
+    # p input_array[0]
     return input_array[0] + add_until_100(input_array[1, input_array.length - 1])
   end
 end
 
 p add_until_100([7, 12, 10, 100, 19, 15, 75, 11])
 
-def minus(number_array)
-  return number_array[1, number_array.length - 1]
-end
+# def minus(number_array)
+#   return number_array[1, number_array.length - 1]
+# end
 
-p minus([15, 16, 17])
+# p minus([15, 16, 17])
