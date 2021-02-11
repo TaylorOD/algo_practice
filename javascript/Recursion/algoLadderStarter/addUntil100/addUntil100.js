@@ -2,14 +2,16 @@
 // Use recursion and memoization to avoid unnecessary recursion calls
 
 const addUntil100 = function (inputArray) {
+  let sumOfRemainingNumbers = 0
   if (inputArray.length === 0) {
     return 0
   }
-  if (inputArray[0] + addUntil100(inputArray.splice(1)) > 100) {
-    return addUntil100(inputArray.splice(1))
+  sumOfRemainingNumbers = addUntil100(inputArray.slice(1))
+  if (inputArray[0] + sumOfRemainingNumbers > 100) {
+    return sumOfRemainingNumbers
   } else {
-    return inputArray[0] + addUntil100(inputArray.splice(1))
+    return inputArray[0] + sumOfRemainingNumbers
   }
 }
 
-console.log(addUntil100([7, 12, 10, 100, 19, 15]))
+console.log(addUntil100([7, 12, 10, 100, 19, 15, 75, 11]))
