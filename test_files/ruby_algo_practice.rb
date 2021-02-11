@@ -56,3 +56,23 @@
 #   end
 # end
 # p result
+
+# // Write a recursive function that accepts an array of numbers and returns the sum as long as a particular number doesn't bring the sum above 100.
+# // Use recursion and memoization to avoid unnecessary recursion calls
+
+def add_until_100(input_array)
+  return 0 if input_array.length == 0
+  if input_array[0] + add_until_100(input_array[1, input_array.length - 1]) > 100
+    return add_until_100(input_array[1, input_array.length - 1])
+  else
+    return input_array[0] + add_until_100(input_array[1, input_array.length - 1])
+  end
+end
+
+p add_until_100([7, 12, 10, 100, 19, 15, 75, 11])
+
+def minus(number_array)
+  return number_array[1, number_array.length - 1]
+end
+
+p minus([15, 16, 17])
