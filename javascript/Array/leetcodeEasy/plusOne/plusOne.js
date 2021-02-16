@@ -24,12 +24,23 @@
 // Output: [1]
 
 const plusOne = function (inputArray) {
-  let incrementedArray = inputArray[inputArray.length - 1] + 1
-  inputArray.pop(inputArray[inputArray.length - 1])
-  inputArray.push(incrementedArray)
-  return inputArray
+  let incrementedElement = inputArray[inputArray.length - 1] + 1
+
+  if (incrementedElement >= 10) {
+    let splitNumber = incrementedElement.toString().split("")
+    let first = parseInt(splitNumber[0])
+    let second = parseInt(splitNumber[1])
+    inputArray.pop(inputArray[inputArray.length - 1])
+    inputArray.push(first, second)
+    return inputArray
+  } else {
+    inputArray.pop(inputArray[inputArray.length - 1])
+    inputArray.push(incrementedElement)
+    return inputArray
+  }
 }
 
 console.log(plusOne([1, 2, 3]))
 console.log(plusOne([4, 3, 2, 1]))
 console.log(plusOne([0]))
+console.log(plusOne([9]))
