@@ -39,11 +39,9 @@ const twoArrays = function (inputArrayOne, inputArrayTwo) {
     } else {
       inputHash[inputArrayTwo[j]] += 1
     }
-  }
 
-  for (let value in inputHash) {
-    if (inputHash[value] === 2) {
-      results.push(inputHash[value])
+    if (inputHash[inputArrayTwo[j]] === 2) {
+      results.push(inputArrayTwo[j])
     }
   }
   return results
