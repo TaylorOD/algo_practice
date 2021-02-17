@@ -10,8 +10,15 @@
 // Output: 8
 
 const missingNumber = function (inputArray) {
-
+  inputArray.sort((a, b) => a - b)
+  for (let i = 0; i < inputArray.length; i += 1) {
+    if (inputArray[i] != i) {
+      return i
+    }
+  }
+  return "No missing number"
 }
 
 console.log(missingNumber([5, 2, 4, 1, 0]))
 console.log(missingNumber([9, 3, 2, 5, 6, 7, 1, 0, 4]))
+console.log(missingNumber([9, 3, 2, 5, 6, 7, 1, 0, 4, 8]))
