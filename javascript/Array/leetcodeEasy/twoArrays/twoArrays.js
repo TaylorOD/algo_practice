@@ -24,7 +24,7 @@ const twoArrays = function (inputArrayOne, inputArrayTwo) {
   let inputHash = {}
   let results = []
 
-  for (let i = 0; i < inputArrayOne.length; i += 1) {
+  for (var i = 0; i < inputArrayOne.length; i += 1) {
     if (!inputHash[inputArrayOne[i]]) {
       inputHash[inputArrayOne[i]] = 1
     } else {
@@ -42,7 +42,17 @@ const twoArrays = function (inputArrayOne, inputArrayTwo) {
     if (inputHash[inputArrayTwo[j]] === 2) {
       results.push(inputArrayTwo[j])
     }
+
+    const indexInOne = inputArrayOne.indexOf(inputArrayOne[i])
+    const indexInTwo = inputArrayTwo.indexOf(inputArrayTwo[j])
+
+    if (inputHash[inputArrayOne[i]] >= 2 && indexInOne > -1) {
+      results.push(inputArrayOne[i])
+      inputHash[inputArrayOne[i]] = inputHash[inputArrayOne[i]] - 2
+      inputArrayOne.splice(indexInOne, 1)
+    }
   }
+
   return results
 }
 
