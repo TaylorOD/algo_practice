@@ -43,7 +43,16 @@ class LinkedList
     end
   end
 
+  def last
+    # We start with the first node of the list:
+    current_node = first_node
 
+    # Print each node in the array
+    while current_node.next_node
+      current_node = current_node.next_node
+    end
+    return current_node.data
+  end
 
   def index_of(value)
     # We begin at the first node of the list:
