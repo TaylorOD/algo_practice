@@ -32,6 +32,17 @@ class LinkedList
     return current_node.data
   end
 
+  def print
+    # We start with the first node of the list:
+    current_node = first_node
+
+    # Print each node in the array
+    while current_node
+      print current_node.data
+      current_node = current_node.previous_node
+    end
+  end
+
   def index_of(value)
     # We begin at the first node of the list:
     current_node = first_node
@@ -104,4 +115,6 @@ class LinkedList
 
     # We change the link of the current_node to point to the node_after_deleted_node, leaving the node we want to delete out of the list:
     current_node.next_node = node_after_deleted_node
+  end
+
 end
