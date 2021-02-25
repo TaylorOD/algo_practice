@@ -28,4 +28,18 @@ class DoublyLinkedList
       @last_node = new_node
     end
   end
+
+  def print_reverse_order
+    def print
+      # We start with the first node of the list:
+      current_node = last_node
+
+      # Print each node in the array
+      while current_node
+        print current_node.data
+        current_node = current_node.previous_node
+      end
+    end
+  end
+
 end

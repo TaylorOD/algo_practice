@@ -39,9 +39,11 @@ class LinkedList
     # Print each node in the array
     while current_node
       print current_node.data
-      current_node = current_node.previous_node
+      current_node = current_node.next_node
     end
   end
+
+
 
   def index_of(value)
     # We begin at the first node of the list:
