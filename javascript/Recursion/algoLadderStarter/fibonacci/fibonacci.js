@@ -18,5 +18,17 @@ const fibonacci = function (number, memo = {}) {
   return memo[number]
 }
 
+const fibonacciExpert = function (number, memo = {1: 0, 2: 1}) {
+  if (number in memo) {
+    return memo[number]
+  } else {
+    memo[number] = fibonacciExpert(number - 2, memo) + fibonacciExpert(number - 1, memo)
+  }
+  return memo[number]
+}
+
 console.log(fibonacci(9))
 console.log(fibonacci(10))
+
+console.log(fibonacciExpert(9))
+console.log(fibonacciExpert(10))
