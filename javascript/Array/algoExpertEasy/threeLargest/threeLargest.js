@@ -1,3 +1,5 @@
+// Write a function that takes in an array of at least three integers and, without sorting the array, returns a sorted array of the three largest numbers in the input array. The result array should return duplicates if needed.
+
 function findThreeLargestNumbers(inputArray) {
   const threeLargest = [null, null, null]
 
