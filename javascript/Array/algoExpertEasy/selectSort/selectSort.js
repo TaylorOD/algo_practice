@@ -28,4 +28,3 @@ function swap(startIndex, smallestIndex, array) {
 }
 
 console.log(selectionSort([8, 5, 2, 9, 5, 6, 3]))
-g
