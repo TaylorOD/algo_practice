@@ -5,10 +5,7 @@
 
 // Example:
 // Input:
-// {
-//   "key": 2,
-//   "string": "xyz"
-// }
+// ("xyz", 2)
 
 // Output:
 // "zab"
@@ -28,3 +25,5 @@ function getNewLetters(letter, key, alphabet) {
   let newLetterCode = alphabet.indexOf(letter) + key
   return alphabet[newLetterCode % 26]
 }
+
+console.log(caesarCipherEncryptor("xyz", 2))
