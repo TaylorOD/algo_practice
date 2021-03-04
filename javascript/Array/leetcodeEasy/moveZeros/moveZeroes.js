@@ -11,7 +11,7 @@
 
 // Problem: https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/567/
 
-const moveZeros = (inputArray) => {
+const moveZeroes = (inputArray) => {
   let indexPointer = 0
   for (let i = 0; i < inputArray.length; i += 1) {
     if (inputArray[i] !== 0) {
@@ -23,5 +23,5 @@ const moveZeros = (inputArray) => {
   return inputArray
 }
 
-console.log(moveZeros([0, 1, 0, 3, 12]))
-console.log(moveZeros([0, 0, 1]))
+console.log(moveZeroes([0, 1, 0, 3, 12]))
+console.log(moveZeroes([0, 0, 1]))
