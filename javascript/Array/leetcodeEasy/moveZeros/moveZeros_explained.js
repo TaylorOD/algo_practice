@@ -12,10 +12,12 @@
 // Problem: https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/567/
 
 const moveZeros = (inputArray) => {
+  let indexPointer = 0
   for (let i = 0; i < inputArray.length; i += 1) {
-    if (inputArray[i] === 0) {
-      inputArray.push(0)
-      inputArray.splice(i, 1)
+    if (inputArray[i] !== 0) {
+      inputArray[indexPointer] = inputArray[i]
+      inputArray[i] = indexPointer === i ? inputArray[i] : 0
+      indexPointer += 1
     }
   }
   return inputArray
