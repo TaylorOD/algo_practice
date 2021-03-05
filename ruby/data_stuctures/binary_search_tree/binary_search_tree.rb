@@ -87,4 +87,32 @@ def tree_node
       return node.rightChild
     end
   end
+
+  def traverse_and_print(node)
+    if node == nil
+      return
+    end
+    traverse_and_print(node.leftChild)
+    print (node.value)
+    traverse_and_print(node.rightChild)
+  end
+
+  def traverse_and_print_preorder(node)
+    if node == nil
+      return
+    end
+    print (node.value)
+    traverse_and_print_preorder(node.leftChild)
+    traverse_and_print_preorder(node.rightChild)
+  end
+
+  def traverse_and_print_postorder(node)
+    if node == nil
+      return
+    end
+    traverse_and_print_postorder(node.leftChild)
+    traverse_and_print_postorder(node.rightChild)
+    print (node.value)
+  end
+
 end
