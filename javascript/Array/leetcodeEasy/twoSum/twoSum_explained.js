@@ -22,7 +22,22 @@
 
 // Create our function that takes in an inputArray and a target
 const twoSum = function (inputArray, target) {
-
+  // Create empty hash that we will use to store our inputArray
+  let inputAsHash = {}
+  // Create a for loop
+  for (let i = 0; i < inputArray.length; i += 1) {
+    // Create a variable that is the target - our inputArray[i]. We will compare this to find our needed result later
+    let goalNumber = target - inputArray[i]
+    // Create find which is equal to our hash with the above goalnumber var.
+    let find = inputAsHash[goalNumber]
+    // If find does not equal undefined - this will equal undefined in every case but when there is a match, then return find and i. Those are our two index.
+    if (find !== undefined) {
+      return [find, i]
+    // Else add this element to the hash
+    } else {
+      inputAsHash[inputArray[i]] = i
+    }
+  }
 }
 
 // Call our function with three test inputs

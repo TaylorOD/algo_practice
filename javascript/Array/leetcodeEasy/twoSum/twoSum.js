@@ -21,7 +21,16 @@
 // Output: [0,1]
 
 const twoSum = function (inputArray, target) {
-
+  let inputAsHash = {}
+  for (let i = 0; i < inputArray.length; i += 1) {
+    let goalNumber = target - inputArray[i]
+    let find = inputAsHash[goalNumber]
+    if (find !== undefined) {
+      return [find, i]
+    } else {
+      inputAsHash[inputArray[i]] = i
+    }
+  }
 }
 
 console.log(twoSum([2, 7, 11, 15], 9))
