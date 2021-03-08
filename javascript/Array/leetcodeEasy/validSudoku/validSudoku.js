@@ -39,8 +39,38 @@
 
 const validSudoku = function (board) {
 
+  for (let i = 0; i < 9; i += 1) {
+    let row = new Set()
+    let column = new Set()
+    let box = new Set()
+    for (let j = 0; j < 9; j += 1) {
+      let currentRow = board[i][j]
+      let currentColumn = board[j][i]
+      let currentBox = board[3 * Math.floor(i / 3) + Math.floor(j / 3)][3 * (i % 3) + (j % 3)]
 
-  for (let i = 0; i < board.length; i += 1) {}
+      if (currentRow != ".") {
+        if (row.has(currentRow)) {
+          return false
+        }
+        row.add(currentRow)
+      }
+
+      if (currentColumn != ".") {
+        if (column.has(currentColumn)) {
+          return false
+        }
+        column.add(currentColumn)
+      }
+
+      if (currentBox != ".") {
+        if (box.has(currentBox)) {
+          return false
+        }
+        box.add(currentBox)
+      }
+    }
+  }
+  return true
 
   }
 
