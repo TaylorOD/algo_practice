@@ -10,4 +10,12 @@ class Heap
   def last_node
     return @data.last
   end
+
+  def left_child_index(index)
+    return (index * 2) + 1
+  end
+
+  def right_child_index(index)
+    return (index * 2) + 2
+  end
 end
