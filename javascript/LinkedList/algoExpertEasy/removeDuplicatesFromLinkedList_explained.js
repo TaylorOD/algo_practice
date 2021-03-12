@@ -34,6 +34,7 @@
 //   ]
 // }
 
+// Create out LinkedList class and basic functionality
 class LinkedList {
   constructor(value) {
     this.value = value
@@ -41,16 +42,24 @@ class LinkedList {
   }
 }
 
+// Create out removeDuplicates function
 function removeDuplicatesFromLinkedList(linkedList) {
+  // Create a variable called currentNode that will represent the item being passed from the linkedList
   let currentNode = linkedList
+  // While the current node is not null (will run the length of the linkedList)
   while (currentNode !== null) {
+    // Let the nextDistinctNode = currentNode.next. This allows us to call currentNode.next easily
     let nextDistinctNode = currentNode.next
+    // While the nextDistinctNode is not equal to null and while the nextDistinctNode.value is equal to the currentNode.value then
     while (nextDistinctNode !== null && nextDistinctNode.value === currentNode.value) {
+      // The next distinctNode is set to equal the nextDistinctNode.next. This replaces the value of the duplicated node with the one following it
       nextDistinctNode = nextDistinctNode.next
     }
+    // Set the currentNode.next to equal the nextDistinctNode
     currentNode.next = nextDistinctNode
+    // Set the current node to equal the nextDistinctNode
     currentNode = nextDistinctNode
   }
-
+  // Return our linkedList
   return linkedList
 }
