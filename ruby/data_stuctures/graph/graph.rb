@@ -10,7 +10,7 @@ class Vertex
     @adjacent_vertices << vertex
   end
 
-  def dfs_traverse(vertex, visited_vertices = {})
+  def depth_first_search_for_traverse(vertex, visited_vertices = {})
     # Mark vertex as visited by adding it to the hash table:
     visited_vertices[vertex.value] = true
 
@@ -24,16 +24,43 @@ class Vertex
       next if visited_vertices[adjacent_vertex.value]
 
       # Recursively call this method on the adjacent vertex:
-      dfs_traverse(adjacent_vertex, visited_vertices)
+      depth_first_search_for_traverse(adjacent_vertex, visited_vertices)
     end
+  end
+
+  def depth_first_search_for_search(vertex, search_value, visited_vertices = {})
+    # Return the original vertex if it happens to be the one we're searching for:
+    return vertex if vertex.value == search_value
+
+    visited_vertices[vertex.value] = true
+
+    vertex.adjacent_vertices.each do |adjacent_vertex|
+      next if visited_vertices[adjacent_vertex.value]
+
+      # If the adjacent vertex is the vertex we're searching for just return that vertex:
+      return adjacent_vertex if adjacent_vertex.value == search_value
+
+      # Attempt to find the vertex we're searching for by recursively calling this method on the adjacent vertex:
+      vertex_were_searching_for = depth_first_search_for_search(adjacent_vertex, search_value, visited_vertices)
+
+      # If we were able to find the corrected vertex using the above recursion, return the correct vertex:
+      return vertex_were_searching_for if vertex_were_searching_for
+    end
+
+    # If we havn't found the vertex we're searching for
+    return nil
   end
 end
 
 alice = Vertex.new("alice")
 bob = Vertex.new("bob")
+cynthia = Vertex.new("cynthia")
 
 alice.add_adjacent_vertext(bob)
+alice.add_adjacent_vertext(cynthia)
+bob.add_adjacent_vertext(cynthia)
+cynthia.add_adjacent_vertext(bob)
 
-p alice
+alice.depth_first_search_for_traverse(bob)
 
-alice.dfs_traverse(bob)
+alice.depth_first_search_for_search(bob, cynthia)
