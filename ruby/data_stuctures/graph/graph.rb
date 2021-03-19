@@ -50,6 +50,35 @@ class Vertex
     # If we havn't found the vertex we're searching for
     return nil
   end
+
+  def breath_first_search_for_traverse(starting_vertex)
+    queue = Queue.new
+
+    visited_vertices = {}
+    visited_vertices[starting_vertex.value] = true
+    queue.enqueue(starting_vertex)
+
+    # While the queue is not empty
+    while queue.read
+      # Remove the first vertex off the queue and make it the current vertex
+      current_vertex = queue.dequeue
+
+      # Print the current vertex value
+      puts current_vertex.value
+
+      # Iterate over the current vertex's adjacent vertexes
+      current_vertex.adjacent_vertices.each do |adjacent_vertex|
+
+        # If we have not yet visited the adjacent vertex:
+        if !visited_vertices[adjacent_vertex.value] = true
+          # Mark the adjacent vertex as visited:
+          visited_vertices[adjacent_vertex.value] = true
+          # Add the adjacent vertext to the queue:
+          queue.enqueue(adjacent_vertices)
+        end
+      end
+    end
+  end
 end
 
 alice = Vertex.new("alice")
@@ -62,5 +91,6 @@ bob.add_adjacent_vertext(cynthia)
 cynthia.add_adjacent_vertext(bob)
 
 alice.depth_first_search_for_traverse(bob)
+alice.breath_first_search_for_traverse(bob)
 
 alice.depth_first_search_for_search(bob, cynthia)
