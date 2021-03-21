@@ -6,7 +6,7 @@ class Vertex
     @adjacent_vertices = []
   end
 
-  def add_adjacent_vertext(vertex)
+  def add_adjacent_vertex(vertex)
     @adjacent_vertices << vertex
   end
 
@@ -85,10 +85,10 @@ alice = Vertex.new("alice")
 bob = Vertex.new("bob")
 cynthia = Vertex.new("cynthia")
 
-alice.add_adjacent_vertext(bob)
-alice.add_adjacent_vertext(cynthia)
-bob.add_adjacent_vertext(cynthia)
-cynthia.add_adjacent_vertext(bob)
+alice.add_adjacent_vertex(bob)
+alice.add_adjacent_vertex(cynthia)
+bob.add_adjacent_vertex(cynthia)
+cynthia.add_adjacent_vertex(bob)
 
 alice.depth_first_search_for_traverse(bob)
 alice.breath_first_search_for_traverse(bob)
