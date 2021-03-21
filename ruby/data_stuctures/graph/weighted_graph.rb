@@ -81,16 +81,21 @@ class Vertex
   end
 end
 
-alice = Vertex.new("alice")
-bob = Vertex.new("bob")
-cynthia = Vertex.new("cynthia")
+class WeightedGraphVertex
+  attr_accessor :value, :adjacent_vertices
 
-alice.add_adjacent_vertex(bob)
-alice.add_adjacent_vertex(cynthia)
-bob.add_adjacent_vertex(cynthia)
-cynthia.add_adjacent_vertex(bob)
+  def initialize(value)
+    @value = value
+    @adjacent_vertices = {}
+  end
 
-alice.depth_first_search_for_traverse(bob)
-alice.breath_first_search_for_traverse(bob)
+  def add_adjacent_vertex(vertex, weight)
+    @add_adjacent_vertices[vertex] = weight
+  end
+end
 
-alice.depth_first_search_for_search(bob, cynthia)
+dallas = WeightedGraphVertex.new("Dallas")
+toronto = WeightedGraphVertex.new("Toronto")
+
+dallas.add_adjacent_vertex(toronto, 138)
+toronto.add_adjacent_vertex(dallas, 216)
