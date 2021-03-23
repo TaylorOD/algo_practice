@@ -80,7 +80,7 @@ class Vertex
     end
   end
 
-  def breath_first_search_for_search(vertex, search_value, visited_vertices = {})
+  def breath_first_search_for_search(starting_vertex, search_value, visited_vertices = {})
     queue = Queue.new
 
     visited_vertices[starting_vertex.value] = true
