@@ -22,8 +22,35 @@ def missing_number(input_array)
     end
     i += 1
   end
+  j = 0
+  while j < input_array.length
+    if !number_hash[j]
+      return j
+    end
+    j += 1
+  end
   number_hash
 end
 
-p missing_number([8, 2, 3, 9, 4, 7, 5, 0, 6])
 p missing_number([2, 3, 0, 6, 1, 5])
+p missing_number([8, 2, 3, 9, 4, 7, 5, 0, 6])
+
+# ---
+
+def missing_number_two(input_array)
+  full_sum = 0
+  (1..input_array.length).each do |number|
+    full_sum += number
+  end
+
+  current_sum = 0
+
+  input_array.each do |number_two|
+    current_sum += number_two
+  end
+
+  return full_sum - current_sum
+end
+
+p missing_number_two([2, 3, 0, 6, 1, 5])
+p missing_number_two([8, 2, 3, 9, 4, 7, 5, 0, 6])
