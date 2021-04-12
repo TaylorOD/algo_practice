@@ -14,6 +14,31 @@
 # Do this in O(N) time.
 
 def longest_consecutive_sequence (input_array)
+  hash_table = {}
+  greatest_sequence_length = 0
+
+  input_array.each do |number|
+    hash_table[number] = true
+  end
+
+  input_array.each do |number|
+
+    if !hash_table[number - 1]
+      current_sequence_length = 1
+      current_number = number
+
+      while hash_table[current_number + 1]
+        current_number += 1
+        current_sequence_length += 1
+
+        if current_sequence_length > greatest_sequence_length
+          greatest_sequence_length = current_sequence_length
+        end
+      end
+    end
+  end
+
+  return greatest_sequence_length
 
 end
 
