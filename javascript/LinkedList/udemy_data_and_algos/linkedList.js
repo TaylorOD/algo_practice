@@ -21,7 +21,15 @@ class LinkedList {
     return this
   }
   prepend(value) {
-    //Code here
+    const newNode = {
+      value: value,
+      next: this.tail
+    }
+    console.log(newNode)
+    this.tail.next = newNode
+    this.tail = newNode
+    this.length += 1
+    return this
   }
 }
 
