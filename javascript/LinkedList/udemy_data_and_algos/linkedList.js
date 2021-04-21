@@ -14,20 +14,18 @@ class LinkedList {
       value: value,
       next: null,
     }
-    console.log(newNode)
     this.tail.next = newNode
     this.tail = newNode
-    this.length++
+    this.length += 1
     return this
   }
   prepend(value) {
     const newNode = {
       value: value,
-      next: this.tail
+      next: null
     }
-    console.log(newNode)
-    this.tail.next = newNode
-    this.tail = newNode
+    newNode.next = this.head
+    this.head = newNode
     this.length += 1
     return this
   }
@@ -37,3 +35,4 @@ let myLinkedList = new LinkedList(10)
 myLinkedList.append(5)
 myLinkedList.append(16)
 myLinkedList.prepend(1)
+console.log(myLinkedList)
