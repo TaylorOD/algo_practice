@@ -10,24 +10,25 @@ class LinkedList {
     this.length = 1
   }
   append(value) {
-    const newNode = {
-      value: value,
-      next: null,
-    }
+    const newNode = new Node(value)
     this.tail.next = newNode
     this.tail = newNode
     this.length += 1
     return this
   }
   prepend(value) {
-    const newNode = {
-      value: value,
-      next: null
-    }
+    const newNode = new Node(value)
     newNode.next = this.head
     this.head = newNode
     this.length += 1
     return this
+  }
+}
+
+class Node {
+  constructor(value) {
+    this.value = value,
+    this.next = null
   }
 }
 
@@ -36,3 +37,42 @@ myLinkedList.append(5)
 myLinkedList.append(16)
 myLinkedList.prepend(1)
 console.log(myLinkedList)
+
+// ---
+
+class LinkedListNoClass {
+  constructor(value) {
+    this.head = {
+      value: value,
+      next: null,
+    }
+    this.tail = this.head
+    this.length = 1
+  }
+  append(value) {
+    const newNode = {
+     value: value,
+     next: null
+    }
+    this.tail.next = newNode
+    this.tail = newNode
+    this.length += 1
+    return this
+  }
+  prepend(value) {
+    const newNode = {
+     value: value,
+     next: null
+    }
+    newNode.next = this.head
+    this.head = newNode
+    this.length += 1
+    return this
+  }
+}
+
+let myLinkedListNoClass = new LinkedListNoClass(10)
+myLinkedListNoClass.append(5)
+myLinkedListNoClass.append(16)
+myLinkedListNoClass.prepend(1)
+console.log(myLinkedListNoClass)
