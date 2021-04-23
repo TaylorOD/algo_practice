@@ -23,6 +23,15 @@ class LinkedList {
     this.length += 1
     return this
   }
+  printList() {
+    const array = []
+    let currentNode = this.head
+    while (currentNode !== null) {
+      array.push(currentNode.value)
+      currentNode = currentNode.next
+    }
+    return array
+  }
 }
 
 class Node {
@@ -36,7 +45,8 @@ let myLinkedList = new LinkedList(10)
 myLinkedList.append(5)
 myLinkedList.append(16)
 myLinkedList.prepend(1)
-console.log(myLinkedList)
+console.log(myLinkedList.printList())
+// console.log(myLinkedList)
 
 // ---
 
@@ -69,10 +79,20 @@ class LinkedListNoClass {
     this.length += 1
     return this
   }
+  printList() {
+    const array = []
+    let currentNode = this.head
+    while (currentNode !== null) {
+      array.push(currentNode.value)
+      currentNode = currentNode.next
+    }
+    return array
+  }
 }
 
 let myLinkedListNoClass = new LinkedListNoClass(10)
 myLinkedListNoClass.append(5)
 myLinkedListNoClass.append(16)
 myLinkedListNoClass.prepend(1)
-console.log(myLinkedListNoClass)
+console.log(myLinkedListNoClass.printList())
+// console.log(myLinkedListNoClass)
