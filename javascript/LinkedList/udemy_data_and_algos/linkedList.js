@@ -88,6 +88,18 @@ class LinkedListNoClass {
     }
     return array
   }
+
+  insert(index, value) {
+    if (index >= this.length) {
+      return this.append.value
+    }
+
+    const newNode = {
+      value: value,
+      next: null
+    }
+    const leader = this.traverseToIndex
+  }
 }
 
 let myLinkedListNoClass = new LinkedListNoClass(10)
