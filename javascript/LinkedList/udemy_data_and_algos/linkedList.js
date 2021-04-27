@@ -91,14 +91,30 @@ class LinkedListNoClass {
 
   insert(index, value) {
     if (index >= this.length) {
-      return this.append.value
+      return this.append(value)
     }
-
     const newNode = {
       value: value,
       next: null
     }
-    const leader = this.traverseToIndex
+    const leader = this.traverseToIndex(index - 1)
+    const holdingPointer = leader.next
+    leader.next = newNode
+    newNode.next = holdingPointer
+    this.length++
+    return this.printList()
+  }
+  traverseToIndex(index) {
+    let counter = 0
+    let currentNode = this.head
+    while (counter !== index) {
+      currentNode = currentNode.next
+      counter += 1
+    }
+    return currentNode
+  }
+  remove(index) {
+
   }
 }
 
@@ -106,5 +122,6 @@ let myLinkedListNoClass = new LinkedListNoClass(10)
 myLinkedListNoClass.append(5)
 myLinkedListNoClass.append(16)
 myLinkedListNoClass.prepend(1)
+myLinkedListNoClass.insert(2, 99)
 console.log(myLinkedListNoClass.printList())
 // console.log(myLinkedListNoClass)
