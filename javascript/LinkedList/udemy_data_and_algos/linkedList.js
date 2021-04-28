@@ -91,6 +91,7 @@ class LinkedListNoClass {
 
   insert(index, value) {
     if (index >= this.length) {
+
       return this.append(value)
     }
     const newNode = {
