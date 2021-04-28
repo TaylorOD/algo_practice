@@ -115,6 +115,14 @@ class LinkedListNoClass {
     return currentNode
   }
   remove(index) {
+    if (index >= this.length) {
+
+    }
+    const leader = this.traverseToIndex(index - 1)
+    const unwantedNode = leader.next
+    leader.next = unwantedNode.next
+    this.length -= 1
+    return this.printList()
 
   }
 }
@@ -124,5 +132,7 @@ myLinkedListNoClass.append(5)
 myLinkedListNoClass.append(16)
 myLinkedListNoClass.prepend(1)
 myLinkedListNoClass.insert(2, 99)
+console.log(myLinkedListNoClass.printList())
+myLinkedListNoClass.remove(2)
 console.log(myLinkedListNoClass.printList())
 // console.log(myLinkedListNoClass)
