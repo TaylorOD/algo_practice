@@ -4,18 +4,18 @@
 # Output: “hElLo, HoW ArE YoUr pOrCuPiNeS ToDaY?”
 
 def alternate_capitals (input_string)
-  result = ""
+  result_string = ""
   index = 0
   while index < input_string.length
 
     if index % 2 == 1
-      result << input_string[index].upcase
+      result_string << input_string[index].upcase
     else
-      result << input_string[index]
+      result_string << input_string[index]
     end
     index += 1
   end
-  return result
+  return result_string
 end
 
 p alternate_capitals("hello, how are your porcupines today?")
