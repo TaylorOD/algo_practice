@@ -9,7 +9,7 @@
 def show_me_the_money (input_string)
   index = 0
   while index < input_string.length
-    if input_string[index] === "$"
+    if input_string[index] == "$"
       return true
     end
     index += 1
