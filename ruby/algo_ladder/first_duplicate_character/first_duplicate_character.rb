@@ -16,3 +16,4 @@ end
 
 p first_duplicate_character("abcdefghhijkkloooop")
 p first_duplicate_character("abcdefghijklop")
+p first_duplicate_character("abcdefghijklopp")
