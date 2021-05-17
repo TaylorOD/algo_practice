@@ -10,13 +10,13 @@ end
 
 def is_prime (possible_prime)
   half = possible_prime / 2
-  j = 2
+  index = 2
 
-  while j <= half
-    if possible_prime % j == 0
+  while index <= half
+    if possible_prime % index == 0
       return false
     end
-    j += 1
+    index += 1
   end
   return true
 end
