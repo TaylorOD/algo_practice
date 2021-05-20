@@ -39,6 +39,22 @@ class LinkedList {
    this.length += 1
   //  Return this so they can see the node
    return this
+  }
+  // Create method to print our linkedList
+  printList() {
+    // Create array that we will populate with our nodes
+    const array = []
+    // Create currentNode var which is equal to the start of the LinkedList
+    let currentNode = this.head
+    // While the currentNode is still populated run our while loop
+    while (currentNode !== null) {
+      // Push the currentNode value to our array
+      array.push(currentNode.value)
+      // Update the currentNode to be the next node
+      currentNode = currentNode.next
+    }
+    // Return the array so we can see it
+    return array
  }
 }
 // Create a new linkedList and pass in a value of ten
