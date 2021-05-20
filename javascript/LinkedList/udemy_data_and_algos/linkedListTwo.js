@@ -25,6 +25,20 @@ class LinkedList {
    this.tail = newNode
   //  Increase the length
    this.length += 1
+   return this
+ }
+//  Set up prepend method that takes in a value. This creates a new node at the start
+ prepend(value) {
+  //  Create a new node with the value being passed in
+   const newNode = new Node(value)
+  //  Set the newNode.next to be the head/first node
+   newNode.next = this.head
+  //  This.head = newNode so this is the new head
+   this.head = newNode
+  //  This length is now one great
+   this.length += 1
+  //  Return this so they can see the node
+   return this
  }
 }
 // Create a new linkedList and pass in a value of ten
@@ -32,4 +46,5 @@ let myLinkedList = new LinkedList(10)
 // Append several items to the linkedList
 myLinkedList.append(15)
 myLinkedList.append(7)
+// Call our linkedList
 console.log(myLinkedList)
