@@ -12,7 +12,7 @@ const largestProduct = function (array) {
     // If the array[i] and array[i + 1] product are greater than our results var let them be our new result var
       if (array[i] * array[i + 1] > result) {
         result = array[i] * array[i + 1]
-    }
+      }
   }
   // Return the result var
   return result
