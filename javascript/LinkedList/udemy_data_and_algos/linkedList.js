@@ -41,11 +41,11 @@ class Node {
   }
 }
 
-let myLinkedList = new LinkedList(10)
-myLinkedList.append(5)
-myLinkedList.append(16)
-myLinkedList.prepend(1)
-console.log(myLinkedList.printList())
+// let myLinkedList = new LinkedList(10)
+// myLinkedList.append(5)
+// myLinkedList.append(16)
+// myLinkedList.prepend(1)
+// console.log(myLinkedList.printList())
 // console.log(myLinkedList)
 
 // ---
@@ -123,7 +123,23 @@ class LinkedListNoClass {
     leader.next = unwantedNode.next
     this.length -= 1
     return this.printList()
-
+  }
+  reverse() {
+    if (this.length === 1) {
+      return this.head
+    }
+    let first = this.head
+    this.tail = this.head
+    let second = first.next
+    while (second) {
+      const temp = second.next
+      second.next = first
+      first = second
+      second = temp
+    }
+    this.head.next = null
+    this.head = first
+    return this.printList()
   }
 }
 
@@ -135,4 +151,5 @@ myLinkedListNoClass.insert(2, 99)
 console.log(myLinkedListNoClass.printList())
 myLinkedListNoClass.remove(2)
 console.log(myLinkedListNoClass.printList())
+console.log(myLinkedListNoClass.reverse())
 // console.log(myLinkedListNoClass)
