@@ -28,6 +28,16 @@ class Stack {
     return this
   }
   pop() {
+    if (!this.top) {
+      return null
+    }
+    if (this.top === this.bottom) {
+      this.bottom = null
+    }
+    // const holdingPointer = this.top
+    this.top = this.top.next
+    this.length -= 1
+    return this
 
   }
 
@@ -36,4 +46,6 @@ const myStack = new Stack()
 myStack.push("google")
 myStack.push("udemy")
 myStack.push("discord")
+console.log(myStack.peak())
+myStack.pop()
 console.log(myStack.peak())
