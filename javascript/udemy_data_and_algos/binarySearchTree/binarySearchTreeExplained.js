@@ -6,7 +6,6 @@ class Node {
     this.value = value
   }
 }
-
 // Create our BinarySearchTree class
 class BinarySearchTree {
   // Create our constructor which sets the root node to null be default
@@ -49,23 +48,32 @@ class BinarySearchTree {
       }
     }
   }
+  // Function to loop up value in array
   lookup(value) {
+    // If there is no root node then return null
     if (!this.root) {
       return null
     }
+    // Let the current node equal this.root
     let currentNode = this.root
+    // While currentNode exists run this loop
     while (currentNode) {
+      // If the value is less than the currentNode value then move left on the tree
       if (value < currentNode.value) {
         currentNode = currentNode.left
+        // If the value is greater than the current value then move right on the tree
       } else if (value > currentNode.value) {
         currentNode = currentNode.right
+        // If the currentNode.value is the same as the value then return the currentNode
       } else if (currentNode.value === value) {
         return currentNode
       }
     }
+    // If no matching node/value found then return false
     return false
   }
-remove(value) {
+  // Function to remove value
+  remove(value) {
     if (!this.root) {
       return false;
     }
@@ -145,7 +153,7 @@ remove(value) {
     }
   }
 }
-
+// Call our function with test inputs
 const tree = new BinarySearchTree()
 tree.insert(9)
 tree.insert(4)

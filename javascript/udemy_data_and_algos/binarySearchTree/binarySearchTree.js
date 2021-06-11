@@ -123,6 +123,8 @@ tree.insert(15)
 tree.insert(1)
 console.log(tree.lookup(9))
 console.log(tree.lookup(150))
+console.log(tree.remove(9))
+console.log(tree.lookup(9))
 console.log(JSON.stringify(traverse(tree.root)))
 
 function traverse(node) {
