@@ -1,28 +1,28 @@
 // Write two functions that finds the factorial of any number. One should use recursive, the other should just use a for loop
 
-function findFactorialRecursive(number) {
-  let answer = 1
-  let i = 2
-  if (number === 2) {
-    answer = 2
+function findFactorialRecursive(input_number) {
+  let result = 1
+  let index_one = 2
+  if (input_number === 2) {
+    result = 2
   }
-  if (i <= number) {
-    answer *= i
-    i += 1
-    return number * findFactorialRecursive(number - 1)
+  if (index_one <= input_number) {
+    result *= index_one
+    index_one += 1
+    return input_number * findFactorialRecursive(input_number - 1)
   }
-  return answer
+  return result
 }
 
-function findFactorialIterative(number) {
-  let answer = 1
-  if (number === 2) {
-    answer = 2
+function findFactorialIterative(input_number) {
+  let result = 1
+  if (input_number === 2) {
+    result = 2
   }
-  for (let i = 2; i <= number; i += 1) {
-    answer *= i
+  for (let index_one = 2; index_one <= input_number; index_one += 1) {
+    result *= index_one
   }
-  return answer
+  return result
 }
 
 console.log(findFactorialRecursive(5))
