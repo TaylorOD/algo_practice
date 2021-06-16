@@ -5,12 +5,12 @@
 
 //For example: fibonacciRecursive(6) should return 8
 
-function fibonacciIterative(n) {
+function fibonacciIterative(input_number) {
   let fibonacciArray = [0, 1]
-  for (let index = 2; index <= n; index += 1) {
+  for (let index = 2; index <= input_number; index += 1) {
     fibonacciArray.push(fibonacciArray[index - 1] + fibonacciArray[index - 2])
   }
-  return fibonacciArray[n]
+  return fibonacciArray[input_number]
 }
 
 function fibonacciRecursive(n) {

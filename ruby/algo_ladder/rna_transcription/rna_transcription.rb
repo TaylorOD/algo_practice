@@ -15,6 +15,14 @@
 # Output: 'UGCACCAGAAUU'
 
 def rna_transcription (input_string)
+  translation_hash = {"G" => "C", "C" => "G", "T" => "A", "A" => "U"}
+  result = ""
+  index_one = 0
+  while index_one < input_string.length
+    result += translation_hash[input_string[index_one]]
+    index_one += 1
+  end
+  return result
 end
 
 p rna_transcription("ACGTGGTCTTAA")

@@ -13,3 +13,24 @@
 
 # Input: 'ACGTGGTCTTAA'
 # Output: 'UGCACCAGAAUU'
+
+# Create our function that takes in an input string
+def rna_transcription (input_string)
+  # Create a translation hash that will return the correct letter when passed in its key
+  translation_hash = {"G" => "C", "C" => "G", "T" => "A", "A" => "U"}
+  # Create a results string which we will build in our loop
+  result = ""
+  # Create an index we will use to loop over our input_string
+  index_one = 0
+  # Create a while loop that runs the length of the string
+  while index_one < input_string.length
+    # Add the translated input string character to our result
+    result += translation_hash[input_string[index_one]]
+    # Increment our index
+    index_one += 1
+  end
+  # Return our result
+  return result
+end
+# Call our function with our test input
+p rna_transcription("ACGTGGTCTTAA")
