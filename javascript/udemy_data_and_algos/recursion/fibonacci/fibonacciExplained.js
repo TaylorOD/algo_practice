@@ -5,13 +5,30 @@
 
 //For example: fibonacciRecursive(6) should return 8
 
+// O(n)
+// Create a function that takes in a number
 function fibonacciIterative(n) {
-  //code here;
+  // Create an array that we will use to store each element of the fib sequence. Start it with 0 and 1
+  let fibonacciArray = [0, 1]
+  // Create a for loop starting at 2 and running until index is equal to n
+  for (let index = 2; index <= n; index += 1) {
+    // Add index - 1 and index - 2 to the array for each number and increment up until our n
+    fibonacciArray.push(fibonacciArray[index - 1] + fibonacciArray[index - 2])
+  }
+  // Call our array with the value of n
+  return fibonacciArray[n]
 }
-fibonacciIterative(3)
 
+// O(n^2)
+// Create a function that takes in n
 function fibonacciRecursive(n) {
-  //code here;
+  // If n is equal to 0 or 1 then return n
+  if (n === 0 || n === 1) {
+    return n
+  }
+  // Otherwise call our function recursively with n - 1 and n - 2
+  return (n = fibonacciRecursive(n - 2) + fibonacciRecursive(n - 1))
 }
-
-fibonacciRecursive(3)
+// Call both our functions with test cases
+console.log(fibonacciIterative(7))
+console.log(fibonacciRecursive(7))
