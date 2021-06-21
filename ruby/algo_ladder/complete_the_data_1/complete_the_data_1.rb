@@ -21,3 +21,25 @@
 # {title: 'best selfie evar!!!', submitted_by: "Patti Q.", likes: 1092},
 # {title: 'Mondays are the worst', submitted_by: "Aunty Em", likes: 644}
 # ]
+
+def complete_the_data_one(post_hash)
+  users = {403 => "Aunty Em", 231 => "Joelle P.", 989 => "Lyndon Johnson", 111 => "Patti Q."}
+
+  index_one = 0
+  while index_one < post_hash.length
+    users.each do |element, value|
+      if (users[element] == users[post_hash[index_one][:submitted_by]])
+        post_hash[index_one][:submitted_by] = users[element]
+      end
+    end
+    index_one += 1
+  end
+  return post_hash
+end
+
+p complete_the_data_one([
+{title: 'Me Eating Pizza', submitted_by: 231, likes: 1549},
+{title: 'i never knew how cool i was until now', submitted_by: 989, likes: 3},
+{title: 'best selfie evar!!!', submitted_by: 111, likes: 1092},
+{title: 'Mondays are the worst', submitted_by: 403, likes: 644}
+])
