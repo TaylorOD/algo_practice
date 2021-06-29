@@ -26,19 +26,10 @@
 def complete_the_data_one(post_hash)
   # Add our user hash
   users = {403 => "Aunty Em", 231 => "Joelle P.", 989 => "Lyndon Johnson", 111 => "Patti Q."}
-  # Create our index
-  index_one = 0
-  # Create a while loop over our hash
-  while index_one < post_hash.length
-    # Create an each loop to loop over out user hash
-    users.each do |element, value|
-      # If the user key is equal to the submitted_by value then update the submitted_by value with the users name
-      if (users[element] == users[post_hash[index_one][:submitted_by]])
-        post_hash[index_one][:submitted_by] = users[element]
-      end
-    end
-    # Increment our index
-    index_one += 1
+  # Create an each loop to move through our post_hash
+  post_hash.each do |post|
+    # For each post replace the submitted_by value with the submitted by value that aligns in the user hash
+    post[:submitted_by] = users[post[:submitted_by]]
   end
   # Return our updated hash
   return post_hash

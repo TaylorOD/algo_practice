@@ -25,15 +25,10 @@
 def complete_the_data_one(post_hash)
   users = {403 => "Aunty Em", 231 => "Joelle P.", 989 => "Lyndon Johnson", 111 => "Patti Q."}
 
-  index_one = 0
-  while index_one < post_hash.length
-    users.each do |element, value|
-      if (users[element] == users[post_hash[index_one][:submitted_by]])
-        post_hash[index_one][:submitted_by] = users[element]
-      end
-    end
-    index_one += 1
+  post_hash.each do |post|
+    post[:submitted_by] = users[post[:submitted_by]]
   end
+
   return post_hash
 end
 
