@@ -28,8 +28,14 @@
 # ]
 
 def complete_the_data_2 (input_post_array, input_user_array)
-
-
+  input_post_array.each do |post|
+    input_user_array.each do |user|
+      if post[:submitted_by] == user[:user_id]
+        post[:submitted_by] = user[:name]
+      end
+    end
+  end
+  return input_post_array
 end
 
 post_array = [
