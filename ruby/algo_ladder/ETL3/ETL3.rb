@@ -24,7 +24,20 @@
 # ]
 
 def ETL3 (input_video_array, input_author_array)
+  result = []
 
+  input_video_array.each do |video|
+    input_author_array.each do |author|
+      if video[:views] >= 100
+        if video[:author_id] == author[:id]
+          author_name = author[:first_name] +" " + author[:last_name]
+          result << {title: video[:title], views: video[:views], author_name: author_name}
+        end
+      end
+    end
+  end
+
+  return result
 end
 
 video_array = [
