@@ -138,6 +138,26 @@ class BinarySearchTree {
     // Return our list
     return list
   }
+  // Add recursive BFS function that passes in a queue and list
+  breadthFirstSearchRecursive(queue, list) {
+    // If our queue is empty then return our list. Base case
+    if (queue.length === 0) {
+      return list
+    }
+    // Let our currentNode shift from our queue
+    let currentNode = queue.shift()
+    // Add the item to our list
+    list.push(currentNode.value)
+    // Add left and right nodes like in our non recursive function
+    if (currentNode.left) {
+      queue.push(currentNode.left)
+    }
+    if (currentNode.right) {
+      queue.push(currentNode.right)
+    }
+    // Return our function and pass in our queue and list
+    return this.breadthFirstSearchRecursive(queue, list)
+  }
 }
 
 const tree = new BinarySearchTree()
@@ -149,6 +169,7 @@ tree.insert(170)
 tree.insert(15)
 tree.insert(1)
 console.log(tree.breadthFirstSearch())
+console.log(tree.breadthFirstSearchRecursive([this.root], []))
 console.log(tree.lookup(9))
 console.log(tree.lookup(150))
 console.log(tree.remove(9))
