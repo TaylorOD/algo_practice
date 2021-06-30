@@ -30,8 +30,17 @@
 # }
 
 def book_organizer (input_book_array)
-
+  result = {}
+  input_book_array.each do |book|
+    if !result[book[:author]]
+      result[book[:author]] = [{title: book[:title], year: book[:year]}]
+    else
+      result[book[:author]] << {title: book[:title], year: book[:year]}
+    end
+  end
+  return result
 end
+
 
 book_array = [
 {title: "The Lord of the Rings", author: "J. R. R. Tolkien", year: 1954 },
@@ -43,4 +52,4 @@ book_array = [
 {title: "The Two Towers", author: "J. R. R. Tolkien", year: 1954 }
 ]
 
-p book_organizer(book_array)
+pp book_organizer(book_array)
