@@ -152,6 +152,7 @@ tree.insert(6)
 tree.insert(170)
 tree.insert(15)
 tree.insert(1)
+
 console.log(tree.breadthFirstSearch())
 console.log(tree.breadthFirstSearchRecursive([tree.root], []))
 console.log(tree.lookup(9))
