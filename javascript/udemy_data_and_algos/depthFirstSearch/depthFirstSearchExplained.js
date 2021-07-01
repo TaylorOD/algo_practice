@@ -142,28 +142,71 @@ class BinarySearchTree {
     }
     return this.breadthFirstSearchRecursive(queue, list)
   }
+  depthFirstSearchInOrder() {
+    return traverseInOrder(this.root, [])
+  }
+  depthFirstSearchPostOrder() {
+    return traversePostOrder(this.root, [])
+  }
+  depthFirstSearchPreOrder() {
+    return traversePreOrder(this.root, [])
+  }
 }
 
 const tree = new BinarySearchTree()
-tree.insert(20)
 tree.insert(9)
 tree.insert(4)
 tree.insert(6)
+tree.insert(20)
 tree.insert(170)
 tree.insert(15)
 tree.insert(1)
 
-console.log(tree.breadthFirstSearch())
-console.log(tree.breadthFirstSearchRecursive([tree.root], []))
-console.log(tree.lookup(9))
-console.log(tree.lookup(150))
-console.log(tree.remove(9))
-console.log(tree.lookup(9))
-console.log(JSON.stringify(traverse(tree.root)))
+console.log(tree.depthFirstSearchInOrder())
+console.log(tree.depthFirstSearchPostOrder())
+console.log(tree.depthFirstSearchPreOrder())
+// console.log(tree.breadthFirstSearch())
+// console.log(tree.breadthFirstSearchRecursive([tree.root], []))
+// console.log(tree.lookup(9))
+// console.log(tree.lookup(150))
+// console.log(tree.remove(9))
+// console.log(tree.lookup(9))
+// console.log(JSON.stringify(traverse(tree.root)))
 
 function traverse(node) {
   const tree = { value: node.value }
   tree.left = node.left === null ? null : traverse(node.left)
   tree.right = node.right === null ? null : traverse(node.right)
   return tree
+}
+
+function traverseInOrder(node, list) {
+  if (node.left) {
+    traverseInOrder(node.left, list)
+  }
+  list.push(node.value)
+  if (node.right) {
+    traverseInOrder(node.right, list)
+  }
+  return list
+}
+function traversePostOrder(node, list) {
+  if (node.left) {
+    traversePostOrder(node.left, list)
+  }
+  if (node.right) {
+    traversePostOrder(node.right, list)
+  }
+  list.push(node.value)
+  return list
+}
+function traversePreOrder(node, list) {
+  list.push(node.value)
+  if (node.left) {
+    traversePreOrder(node.left, list)
+  }
+  if (node.right) {
+    traversePreOrder(node.right, list)
+  }
+  return list
 }
