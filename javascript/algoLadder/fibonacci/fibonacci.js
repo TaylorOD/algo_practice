@@ -30,12 +30,12 @@ const fibonacciExpert = function (number, memo = {1: 0, 2: 1}) {
 console.log(fibonacci(9))
 console.log(fibonacci(10))
 
-console.log(fibonacciExpert(9))
 console.log(fibonacciExpert(10))
+console.log(fibonacciExpert(11))
 
 // Write a function that gives the Nth number of the Fibonacci Sequence
 
-const fibonacci = function (number) {
+const fibonacci3 = function (number) {
   let numberOne = 0
   let numberTwo = 1
   let result = undefined
@@ -47,4 +47,5 @@ const fibonacci = function (number) {
   }
   return numberOne
 }
-console.log(fibonacci(7))
+console.log(fibonacci3(9))
+console.log(fibonacci3(10))
