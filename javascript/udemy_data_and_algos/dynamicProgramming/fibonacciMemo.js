@@ -1,41 +1,16 @@
-const fibonacci = function (input_number, memo = {}) {
-  if (input_number > 2) {
+const fibonacciMemo = function (input_number, memo = {}) {
+  if (input_number === 0 || input_number === 1) {
     return input_number
   }
-  return fibonacci(input_number - 1, memo[input_number]) + fibonacci(input_number - 2, memo[input_number])
-}
-
-console.log(fibonacci(5))
-
-let calculations = 0
-function fibonacci(n) {
-  //O(2^n)
-
-  if (n < 2) {
-    return n
+  if (!memo[input_number]) {
+    memo[input_number] = fibonacciMemo(input_number - 2, memo) + fibonacciMemo(input_number - 1, memo)
   }
-  return fibonacci(n - 1) + fibonacci(n - 2)
+  return memo[input_number]
 }
 
-function fibonacciMaster() {
-  //O(n)
-  let cache = {}
-  return function fib(n) {
-    calculations++
-    if (n in cache) {
-      return cache[n]
-    } else {
-      if (n < 2) {
-        return n
-      } else {
-        cache[n] = fib(n - 1) + fib(n - 2)
-        return cache[n]
-      }
-    }
-  }
-}
+console.log(fibonacciMemo(8))
 
-function fibonacciMaster2(n) {
+function fibonacciHash(n) {
   let answer = [0, 1]
   for (let i = 2; i <= n; i++) {
     answer.push(answer[i - 2] + answer[i - 1])
@@ -43,4 +18,4 @@ function fibonacciMaster2(n) {
   return answer.pop()
 }
 
-const fasterFib = fibonacciMaster()
+console.log(fibonacciHash(8))
