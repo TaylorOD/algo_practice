@@ -34,7 +34,7 @@
 
 const countPrimes = function (input_number) {
   let result = []
-  for (let i = 0; i < input_number; i += 1) {
+  for (let i = 1; i < input_number - 1; i += 1) {
     if (primeHelper(i)) {
       result.push(i)
     }
@@ -44,7 +44,7 @@ const countPrimes = function (input_number) {
 
 const primeHelper = function (potentialPrimeNumber) {
   let half = potentialPrimeNumber / 2
-  for (let i = 2; i < half; i += 1) {
+  for (let i = 1; i < half - 1; i += 1) {
     if (!i % half === 0) {
       return false
     }
@@ -55,3 +55,5 @@ const primeHelper = function (potentialPrimeNumber) {
 console.log(countPrimes(10))
 console.log(countPrimes(0))
 console.log(countPrimes(1))
+console.log(countPrimes(2))
+console.log(countPrimes(5))
