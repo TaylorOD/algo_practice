@@ -15,7 +15,23 @@
 # Note: You may assume the string contain only lowercase letters.
 
 def first_unique_character (input_string)
-
+  string_hash = {}
+  index_one = 0
+  while index_one < input_string.length
+    if !string_hash[input_string[index_one]]
+      string_hash[input_string[index_one]] = 1
+    else
+      string_hash[input_string[index_one]] += 1
+    end
+    index_one += 1
+  end
+  index_two = 0
+  while index_two < input_string.length
+    if string_hash[input_string[index_two]] == 1
+      return input_string.index(input_string[index_two])
+    end
+    index_two += 1
+  end
 end
 
 pp first_unique_character("leetcode")
