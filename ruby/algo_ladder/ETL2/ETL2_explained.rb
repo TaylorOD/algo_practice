@@ -74,14 +74,19 @@
 # 'z' => 10
 # }
 
+# Create a function that takes in an input_hash
 def etl2 (input_hash)
+  # Create a results hash
   result = {}
-
+  # Create an each loop to loop over our hash
   input_hash.each do |key, value|
+    # Create an each loop using our value
     value.each do |element|
+      # Add each element to our results hash with the key
       result[element.downcase] = key
     end
   end
+  # Return the result
   return result
 end
 
