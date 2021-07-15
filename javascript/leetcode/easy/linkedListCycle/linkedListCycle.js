@@ -18,7 +18,25 @@
 // Output: false
 // Explanation: There is no cycle in the linked list.
 
-const linkedListCycle = function () {}
+const linkedListCycle = function (head) {
+  if (!head) {
+    return false
+  }
+  let hare = head
+  let tortoise = head
+  while (hare) {
+    if (!hare.next) {
+      return false
+    } else {
+      hare = hare.next.next
+      tortoise = tortoise.next
+    }
+    if (hare === tortoise) {
+      return true
+    }
+  }
+  return false
+}
 
 console.log(linkedListCycle([3, 2, 0, -4]))
 console.log(linkedListCycle([1, 2]))
