@@ -16,7 +16,27 @@
 // Output: []
 
 const binaryTreeLevelOrderTraversal = function (inputRoot) {
-
+  if (!inputRoot) {
+    return []
+  }
+  const array = [inputRoot]
+  const result = []
+  while (array.length) {
+    const size = array.length
+    const values = []
+    for (let index = 0; index < size; index += 1) {
+      const node = array.shift()
+      values.push(node.val)
+      if (node.left) {
+        array.push(node.left)
+      }
+      if (node.right) {
+        array.push(node.right)
+      }
+    }
+    result.push(values)
+  }
+  return result
 }
 
 console.log(binaryTreeLevelOrderTraversal([3, 9, 20, null, null, 15, 7]))
