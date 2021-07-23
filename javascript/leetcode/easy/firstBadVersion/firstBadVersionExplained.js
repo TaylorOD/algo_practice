@@ -20,25 +20,32 @@
 // Input: n = 1, bad = 1
 // Output: 1
 
+// Create firstBadVersion function that calls isBadVersion api
 const firstBadVersion = function (isBadVersion) {
+  // Return the response of the api call which we will pass the version number
   return function (versionNumber) {
+    // Create a min var which starts at null
     let min = null
+    // Create a start var that starts at 1
     let start = 1
+    // Create the end which is the passed in versionNumber
     let end = versionNumber
 
+    // Create a while loop which will move through the versionNumbers
     while (start <= end) {
+      // Create a mid point by getting the rounded down version of start+end divided by 2.
+      // We will use this to do a binary search below
       const mid = Math.floor((start + end) / 2)
-
+      // If the version is bad then set the min to equal min and decrease the end var
       if (isBadVersion(mid)) {
         min = mid
         end = mid - 1
+        // Else increase the start var
       } else {
         start = mid + 1
       }
     }
+    // Return min var
     return min
   }
 }
-
-console.log(firstBadVersion(5, 4))
-console.log(firstBadVersion(1, 1))
