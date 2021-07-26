@@ -19,18 +19,23 @@
 // Input: nums = [5,4,-1,7,8]
 // Output: 23
 
+// Create a function that takes in an array of numbers
 const maximumSubarray = function (inputNumbers) {
+  // Create a currentMax variable which starts as the first number in the inputNumbers
   let currentMax = inputNumbers[0]
+  // Create a max variable which starts as the first number in the inputNumbers
   let max = inputNumbers[0]
-
+  // Create a for loop that moves through the inputNumbers
   for (let index = 1; index < inputNumbers.length; index += 1) {
+    // Set the currentMax to be the max sum of currentMax + inputNumbers[index] and inputNumbers[index]
     currentMax = Math.max(currentMax + inputNumbers[index], inputNumbers[index])
+    // Update the max array to use the current max and max sum
     max = Math.max(currentMax, max)
   }
-
+  // Return the max variable
   return max
 }
-
+// Call our function with the test inputs
 console.log(maximumSubarray([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
 console.log(maximumSubarray([1]))
 console.log(maximumSubarray([5, 4, -1, 7, 8]))
