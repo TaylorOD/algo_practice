@@ -23,7 +23,15 @@
 // Output: 31
 // Explanation: The input binary string 11111111111111111111111111111101 has a total of thirty one '1' bits.
 
-const numberOf1Bits = function () {}
+// Create function that takes in a number
+const numberOf1Bits = function (inputNumber) {
+  // Return the inputNumber first as a string with 2 passed as a param
+  // This converts the number to binary
+  // Then the string is split and all zeros are removed
+  // Then the string is joined on all quote marks
+  // Then the length is returned
+  return inputNumber.toString(2).split("0").join("").length
+}
 
 console.log(numberOf1Bits(00000000000000000000000000001011))
 console.log(numberOf1Bits(00000000000000000000000010000000))
