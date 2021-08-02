@@ -4,7 +4,7 @@
 
 // A substring is a contiguous sequence of characters within the string.
 
-// Example 1:
+ // Example 1:
 
 // Input: s = "ADOBECODEBANC", t = "ABC"
 // Output: "BANC"
@@ -23,7 +23,9 @@
 // Explanation: Both 'a's from t must be included in the window.
 // Since the largest window of s only has one 'a', return empty string.
 
-const minimumWindowSubstring = function (string, substring) {}
+const minimumWindowSubstring = function (string, substring) {
+
+}
 
 console.log(minimumWindowSubstring("ADOBECODEBANC", "ABC"))
 console.log(minimumWindowSubstring("a", "a"))
