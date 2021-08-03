@@ -24,14 +24,14 @@
 // Since the largest window of s only has one 'a', return empty string.
 
 const minimumWindowSubstring = function (string, substring) {
-  var answer = ""
+  let answer = ""
 
-  var map = {}
+  let map = {}
   substring.split("").forEach((character) => (map[character] = (map[character] || 0) + 1))
-  var count = Object.keys(map).length
+  let count = Object.keys(map).length
 
-  var left = 0
-  var right = -1
+  let left = 0
+  let right = -1
 
   while (right < string.length) {
     if (count === 0) {
