@@ -24,7 +24,51 @@
 // Since the largest window of s only has one 'a', return empty string.
 
 const minimumWindowSubstring = function (string, substring) {
+  var answer = ""
 
+  // 1. process hashmap
+  var map = {}
+  substring.split("").forEach((character) => (map[character] = (map[character] || 0) + 1))
+  var count = Object.keys(map).length
+
+  // 2. traverse string to find boundaries
+  // both left & right are inclusive
+  var left = 0
+  var right = -1
+
+  while (right < string.length) {
+    if (count === 0) {
+      // good condition
+      // left~right contains substring
+
+      // update answer
+      if (!answer || right - left + 1 < answer.length) {
+        answer = string.slice(left, right + 1)
+      }
+
+      // get rid of current character and then move left
+      if (map[string[left]] !== undefined) {
+        map[string[left]]++
+      }
+      if (map[string[left]] > 0) {
+        count++
+      }
+      left++
+    } else {
+      // bad condition
+      // left~right doesn't contain substring
+
+      // move right and add new character
+      right++
+      if (map[string[right]] !== undefined) {
+        map[string[right]]--
+      }
+      if (map[string[right]] === 0) {
+        count--
+      }
+    }
+  }
+  return answer
 }
 
 console.log(minimumWindowSubstring("ADOBECODEBANC", "ABC"))
