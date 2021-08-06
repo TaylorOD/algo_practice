@@ -29,6 +29,7 @@
   // Return max
 //
 
+
 // Create a function that takes in an array of numbers
 const maximumSubarray = function (inputNumbers) {
   // Create a currentMax variable which starts as the first number in the inputNumbers
