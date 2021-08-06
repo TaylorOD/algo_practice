@@ -20,6 +20,16 @@
 // Output: 23
 
 // Create a function that takes in an array of numbers
+  // create CurrentMax Variable equal to the first element
+  // Create max variable equal to the first element
+  // Create a while loop that will move through the inputArray
+    // update the CurrentMax value using Math.max and pass in CurrentMAx + inputArray[index], and inputArray[index]. The greater will be chosen
+    // Update max with Math.max passing in CurrentMax and max. The greater will be chosen.
+  //
+  // Return max
+//
+
+// Create a function that takes in an array of numbers
 const maximumSubarray = function (inputNumbers) {
   // Create a currentMax variable which starts as the first number in the inputNumbers
   let currentMax = inputNumbers[0]
