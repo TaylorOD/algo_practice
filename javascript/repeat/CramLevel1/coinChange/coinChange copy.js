@@ -30,18 +30,7 @@
 // Input: coins = [1], amount = 2
 // Output: 2
 
-
-var coinChange = function (coins, amount) {
-  let numberOfCoinsNeeded = Array(amount + 1).fill(Infinity)
-  numberOfCoinsNeeded[0] = 0
-
-  for (let coin of coins) {
-    for (let index = coin; index <= amount; index += 1) {
-      numberOfCoinsNeeded[index] = Math.min(numberOfCoinsNeeded[index], numberOfCoinsNeeded[index - coin] + 1)
-    }
-  }
-  return numberOfCoinsNeeded[amount] === Infinity ? -1 : numberOfCoinsNeeded[amount]
-}
+var coinChange = function (coins, amount) {}
 
 console.log(coinChange([1, 2, 5], 11))
 console.log(coinChange([2], 3))
