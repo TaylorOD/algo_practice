@@ -24,7 +24,7 @@ const mergeIntervals = function (inputArray) {
       lastInterval[1] = Math.max(sortedIntervals[index][0], sortedIntervals[index][1])
     } else {
       result.push(currentInterval)
-    }
+
   }
   return result
 }

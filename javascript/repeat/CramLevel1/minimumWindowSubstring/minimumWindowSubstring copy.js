@@ -30,20 +30,20 @@
 
 const minimumWindowSubstring = function (string, substring) {
   let answer = ""
-
   let map = {}
   substring.split("").forEach((character) => (map[character] = (map[character] || 0) + 1))
   let count = Object.keys(map).length
 
   let left = 0
   let right = -1
+
   while (right < string.length) {
     if (count === 0) {
       if (!answer || right - left + 1 < answer.length) {
         answer = string.slice(left, right + 1)
       }
       if (map[string[left]] !== undefined) {
-        map[string[left]]+= 1
+        map[string[left]] += 1
       }
       if (map[string[left]] > 0) {
         count += 1
@@ -52,7 +52,7 @@ const minimumWindowSubstring = function (string, substring) {
     } else {
       right += 1
       if (map[string[right]] !== undefined) {
-        map[string[right]] -=1
+        map[string[right]] -= 1
       }
       if (map[string[right]] === 0) {
         count -= 1
