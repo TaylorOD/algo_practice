@@ -23,10 +23,28 @@
 // Explanation: Both 'a's from t must be included in the window.
 // Since the largest window of s only has one 'a', return empty string.
 
-// Create answer string
-// Map each string caracter to an object hash
-// Create left and right index
-// return answer
+// Create empty answer string
+// Create empty map object
+// Fill map object with characters
+// Create count which is length of object
+
+// Create left and right index. Right is -1.
+// Create while right less than string.length number
+  // If count === 0 (dont understand this
+    // if answer is empty or right= left plus 1 < answer.length
+      //  answer string.slice left, right + 1
+    // if map(string[left] !== undefiend)
+      // map[string[left]]+= 1
+    // if map[string[left]] > 0
+      // count += 1
+    // left += 1
+    // else
+      // right += 1
+      // if map[string[right]] !== undefined
+        // Map[string][right]  -= 1
+      // if map[string[right]] === 0
+        // count  -= 1
+// Retrun answer
 
 const minimumWindowSubstring = function (string, substring) {
   let answer = ""

@@ -31,6 +31,8 @@ const mergeIntervals = function (inputArray) {
     let lastInterval = result[result.length - 1]
     if (currentInterval[0] <= lastInterval[1]) {
       lastInterval[1] = Math.max(sortedIntervals[index][0], sortedIntervals[index][1])
+    } else {
+      result.push(currentInterval)
     }
   }
   return result
