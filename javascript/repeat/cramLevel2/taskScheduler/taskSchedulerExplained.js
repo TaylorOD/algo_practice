@@ -32,3 +32,37 @@
 // Explanation:
 // One possible solution is
 // A -> B -> C -> A -> D -> E -> A -> F -> G -> A -> idle -> idle -> A -> idle -> idle -> A
+
+// Create function that takes in tasks array and number
+const taskScheduler = (tasks, n) => {
+  // If n is 0 then the result is just the tasks.length
+  if (n === 0) {
+    return tasks.length
+  }
+  // Create a map
+  let map = {}
+  // Use a for of loop to populate the map
+  for (let key of tasks) {
+    map[key] = map[key] ? map[key] + 1 : 1 // If map[key] exists then increment te map[key]. If not create it as 1
+  }
+  // Create max and count variable
+  let max = 0
+  let count = 0
+  // Loop through each object
+  Object.keys(map).forEach((key) => {
+    // If the current map key is greater than the max than make it the max
+    if (map[key] > max) {
+      max = map[key]
+      count = 1
+      // Otherwise increase the count
+    } else if (map[key] === max) {
+      count++
+    }
+  })
+  // Return the result
+  return Math.max((max - 1) * (n + 1) + count, tasks.length)
+}
+
+console.log(["A", "A", "A", "B", "B", "B"], 2)
+console.log(["A", "A", "A", "B", "B", "B"], 0)
+console.log(["A", "A", "A", "A", "A", "A", "B", "C", "D", "E", "F", "G"], 2)

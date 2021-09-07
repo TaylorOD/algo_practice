@@ -1,4 +1,4 @@
-https://leetcode.com/problems/task-scheduler/
+// https://leetcode.com/problems/task-scheduler/
 
 // Given a characters array tasks, representing the tasks a CPU needs to do, where each letter represents a different task. Tasks could be done in any order. Each task is done in one unit of time. For each unit of time, the CPU could complete either one task or just be idle.
 
@@ -34,7 +34,27 @@ https://leetcode.com/problems/task-scheduler/
 // A -> B -> C -> A -> D -> E -> A -> F -> G -> A -> idle -> idle -> A -> idle -> idle -> A
 
 const taskScheduler = (tasks, n) => {
+  if (n === 0) {
+    return tasks.length
+  }
+  let map = {}
 
+  for (let key of tasks) {
+    map[key] = map[key] ? map[key] + 1 : 1
+  }
+  let max = 0
+  let count = 0
+
+  Object.keys(map).forEach((key) => {
+    if (map[key] > max) {
+      max = map[key]
+      count = 1
+    } else if (map[key] === max) {
+      count++
+    }
+  })
+
+  return Math.max((max - 1) * (n + 1) + count, tasks.length)
 }
 
 console.log(["A","A","A","B","B","B"], 2)
