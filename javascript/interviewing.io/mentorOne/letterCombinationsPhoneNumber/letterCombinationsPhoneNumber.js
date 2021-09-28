@@ -19,6 +19,7 @@
 // Input: digits = "2"
 // Output: ["a","b","c"]
 
+// My version
 const letterCombinations = (digits) => {
   if (!digits.length) return []
 
@@ -47,3 +48,30 @@ const letterCombinations = (digits) => {
 console.log(letterCombinations("23"))
 console.log(letterCombinations(""))
 console.log(letterCombinations("2"))
+
+
+// Cleaned up from Leetcode
+const letterMap = { 2: "abc", 3: "def", 4: "ghi", 5: "jkl", 6: "mno", 7: "pqrs", 8: "tuv", 9: "wxyz" }
+
+const letterCombinations2 = function (digits) {
+  let length = digits.length
+  let answer = []
+
+  if (!length) return []
+
+  const dfs = (position, string) => {
+    if (position === length) {
+      answer.push(string)
+    } else {
+      let letters = letterMap[digits[position]]
+      for (let index = 0; index < letters.length; index+= 1)  {
+        dfs(position + 1, string + letters[index])
+      }
+    }
+  }
+  dfs(0, "")
+  return answer
+}
+console.log(letterCombinations2("23"))
+console.log(letterCombinations2(""))
+console.log(letterCombinations2("2"))
