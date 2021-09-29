@@ -64,7 +64,7 @@ const letterCombinations2 = function (digits) {
       answer.push(string)
     } else {
       let letters = letterMap[digits[position]]
-      for (let index = 0; index < letters.length; index+= 1)  {
+      for (let index = 0; index < letters.length; index += 1)  {
         dfs(position + 1, string + letters[index])
       }
     }
