@@ -22,3 +22,40 @@
 // ((2*(3-4))*5) = -10
 // (2*((3-4)*5)) = -10
 // (((2*3)-4)*5) = 10
+
+// Create a function that takes in an input
+const diffWaysToCompute = (input) => {
+  let results = []
+  // Create a for loop that movies thorough the input
+  for (let index = 0; index < input.length; index += 1) {
+    // If the current item is not a number
+    if (isNaN(input[index])) {
+      // Recursively call the left and right items
+      let left = diffWaysToCompute(input.slice(0, index))
+      let right = diffWaysToCompute(input.slice(index + 1))
+      // Create left and right for of loops
+      for (let l of left) {
+        for (let r of right) {
+          // If items can be converted into numbers, convert them.
+          l = Number(l)
+          r = Number(r)
+          // If elements are are operators then push them accordingly
+          if (input[index] == "+") {
+            results.push(l + r)
+          } else if (input[index] == "-") {
+            results.push(l - r)
+          } else {
+            results.push(l * r)
+          }
+        }
+      }
+    }
+  }
+  // Length check
+  if (results.length != 0) return results
+  // Return the remaining input
+  return [input]
+}
+
+console.log(diffWaysToCompute("2-1-1"))
+console.log(diffWaysToCompute("2*3-4*5"))
