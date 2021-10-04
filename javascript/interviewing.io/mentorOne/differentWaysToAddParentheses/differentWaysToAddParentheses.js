@@ -23,9 +23,33 @@
 // (2*((3-4)*5)) = -10
 // (((2*3)-4)*5) = 10
 
-const diffWaysToCompute = (expression) => {
+const diffWaysToCompute = (input) => {
+  let results = []
 
+  for (let index = 0; index < input.length; index += 1) {
+    if (isNaN(input[index])) {
+      let left = diffWaysToCompute(input.slice(0, index))
+      let right = diffWaysToCompute(input.slice(index + 1))
+      for (let l of left) {
+        for (let r of right) {
+          l = Number(l)
+          r = Number(r)
+
+          if (input[index] == "+") {
+            results.push(l + r)
+          } else if (input[index] == "-") {
+            results.push(l - r)
+          } else {
+            results.push(l * r)
+          }
+        }
+      }
+    }
+  }
+
+  if (results.length != 0) return results
+  return [input]
 }
 
-console.log(addParentheses("2-1-1"))
-console.log(addParentheses("2*3-4*5"))
+console.log(diffWaysToCompute("2-1-1"))
+console.log(diffWaysToCompute("2*3-4*5"))
