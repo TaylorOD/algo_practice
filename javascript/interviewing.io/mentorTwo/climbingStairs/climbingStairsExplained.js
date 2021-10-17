@@ -53,3 +53,23 @@ const climbStairs = (numberOfStairs) => {
 console.log(climbStairs(2))
 console.log(climbStairs(3))
 // console.log(climbStairs(34))
+
+// Create a function that takes in a number of stairs
+const climbStairsDP = (numberOfStairs) => {
+  // Create an Array to store our dynamic values in
+  let dynamicArray = []
+  // Solve for 0 and 1
+  dynamicArray[0] = 1
+  dynamicArray[1] = 1
+  // Create a for loop starting at 2
+  for (let index = 2; index <= numberOfStairs; index += 1) {
+    // Fill the array at the index with the number of steps passed in
+    dynamicArray[index] = dynamicArray[index - 1] + dynamicArray[index - 2]
+  }
+  // Return whatever element is passed in
+  return dynamicArray[numberOfStairs]
+}
+
+console.log(climbStairsDP(2))
+console.log(climbStairsDP(3))
+// console.log(climbStairs(34))
