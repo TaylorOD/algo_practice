@@ -24,15 +24,15 @@
 // Return true
 //
 const palindromeLinkedList = (head) => {
-  let linkedArray = []
+  let linkedListArray = []
   while (head) {
-    linkedArray.push(head.val)
+    linkedListArray.push(head.val)
     head = head.next
   }
   let first = 0
-  let last = linkedArray.length - 1
-  for (let index = 0; index < linkedArray.length; index += 1) {
-    if (linkedArray[first] != linkedArray[last]) {
+  let last = linkedListArray.length - 1
+  for (let index = 0; index < linkedListArray.length; index += 1) {
+    if (linkedListArray[first] != linkedListArray[last]) {
       return false
     }
     first += 1
