@@ -46,14 +46,13 @@ console.log(climbStairs(3))
 // console.log(climbStairs(34))
 
 const climbStairsDP = (numberOfStairs) => {
-  let dynamicArray = []
-  dynamicArray[0] = 1
-  dynamicArray[1] = 1
-
-  for (let index = 2; index <= numberOfStairs; index += 1) {
-    dynamicArray[index] = dynamicArray[index - 1] + dynamicArray[index - 2]
+  let result = []
+  result[0] = 1
+  result[1] = 1
+  for (let currentStair = 2; currentStair <= numberOfStairs; currentStair += 1) {
+    result[currentStair] = result[currentStair - 1] + result[currentStair - 2]
   }
-  return dynamicArray[numberOfStairs]
+  return result[numberOfStairs]
 }
 
 console.log(climbStairsDP(2))
