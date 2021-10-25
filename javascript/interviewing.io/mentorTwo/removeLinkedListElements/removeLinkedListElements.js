@@ -24,6 +24,7 @@
   // return head
 //
 
+// Taylor attempt
 const removeLinkedListElements = (head, val) => {
     let currentNode = head
 
