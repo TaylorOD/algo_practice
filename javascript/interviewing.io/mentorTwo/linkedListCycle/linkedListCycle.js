@@ -60,6 +60,7 @@ const linkedListCycle = (head) => {
   return false
 }
 
+
 console.log(linkedListCycle([3, 2, 0, -4]))
 console.log(linkedListCycle([1, 2]))
 console.log(linkedListCycle([1]))
