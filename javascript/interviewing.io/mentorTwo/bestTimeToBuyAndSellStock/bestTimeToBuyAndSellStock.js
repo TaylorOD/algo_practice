@@ -38,14 +38,13 @@
 //
 
 const buyAndSell = (inputPriceArray) => {
-  let minStockCost = inputPriceArray[0]
+  let minStockPrice = inputPriceArray[0]
   let profit = 0
-
-  for (let currentStock = 1; currentStock < inputPriceArray.length; currentStock += 1) {
-    if (minStockCost > inputPriceArray[currentStock]) {
-      minStockCost = inputPriceArray[currentStock]
+  for (let index = 1; index < inputPriceArray.length; index += 1) {
+    if (inputPriceArray[index] < minStockPrice) {
+      minStockPrice = inputPriceArray[index]
     } else {
-      profit = Math.max(profit, inputPriceArray[currentStock] - minStockCost)
+      profit = Math.max(profit, inputPriceArray[index] - minStockPrice)
     }
   }
   return profit
