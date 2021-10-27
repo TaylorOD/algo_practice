@@ -46,10 +46,10 @@ console.log(climbStairs(3))
 // console.log(climbStairs(34))
 
 const climbStairsDP = (numberOfStairs) => {
-  let result = []
+  let results = []
   result[0] = 1
   result[1] = 1
-  for (let currentStair = 2; currentStair <= numberOfStairs; currentStair += 1) {
+  for (let currentStair = 2; currentStair < numberOfStairs; numberOfStairs += 1) {
     result[currentStair] = result[currentStair - 1] + result[currentStair - 2]
   }
   return result[numberOfStairs]
