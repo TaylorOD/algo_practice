@@ -44,16 +44,16 @@ const linkedListCycle = (head) => {
   if (!head) {
     return false
   }
-  let hare = head
-  let tortious = head
-  while(hare) {
-    if (!hare.next) {
+  let slow = head
+  let fast = head
+  while (slow) {
+    if (!slow.next) {
       return false
     } else {
-      hare = hare.next.next
-      tortious = tortious.next
+      slow = slow.next.next
+      fast = fast.next
     }
-    if (hare === tortious) {
+    if (slow === fast) {
       return true
     }
   }
