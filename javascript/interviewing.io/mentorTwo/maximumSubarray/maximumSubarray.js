@@ -34,12 +34,12 @@
 
 const maxSubarray = (inputArray) => {
   let currentSubarray = inputArray[0]
-  let max = inputArray[0]
+  let maxSubarray = inputArray[0]
   for (let index = 1; index < inputArray.length; index += 1) {
-    currentSubarray = Math.max(inputArray[index], currentSubarray + inputArray[index])
-    max = Math.max(max, currentSubarray)
+    currentSubarray = Math.max(currentSubarray + inputArray[index], inputArray[index])
+    maxSubarray = Math.max(currentSubarray, maxSubarray)
   }
-  return max
+  return maxSubarray
 }
 
 console.log(maxSubarray([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
