@@ -44,21 +44,21 @@ const linkedListCycle = (head) => {
   if (!head) {
     return false
   }
-  let slow = head
   let fast = head
-  while (slow) {
+  let slow = head
+  while (head) {
     if (!slow.next) {
-      return false
+
     } else {
-      slow = slow.next.next
-      fast = fast.next
-    }
-    if (slow === fast) {
-      return true
-    }
+    fast = fast.next.next
+    slow = slow.next
+  }
+  if (slow === fast) {
+    return true
   }
   return false
 }
+
 
 
 console.log(linkedListCycle([3, 2, 0, -4]))
