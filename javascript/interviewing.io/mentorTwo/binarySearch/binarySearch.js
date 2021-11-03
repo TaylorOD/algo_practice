@@ -38,7 +38,7 @@ console.log(binarySearch([-1, 0, 3, 5, 9, 12], 2))
 const binarySearchLeet = (inputArray, target) => {
   let low = 0
   let high = inputArray.length - 1
-  while(low <= high) {
+  while (low <= high) {
     let middle = Math.floor((low + high) / 2)
     if (inputArray[middle] === target) {
       return middle
