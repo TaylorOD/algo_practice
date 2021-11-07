@@ -32,20 +32,3 @@ const majorityElement = (inputArray) => {
 // Call our function with two test inputs
 console.log(majorityElement([3, 2, 3]))
 console.log(majorityElement([2, 2, 1, 1, 1, 2, 2]))
-
-const binarySearch = (inputArray, target) => {
-  let low = 0
-  let high = inputArray.length - 1
-  while (low < high) {
-    let middle = Math.floor((low + high) / 2)
-    if (inputArray[middle] === target) {
-      return middle
-    } else if (inputArray[middle] < target) {
-      low = middle - 1
-    } else {
-      high = middle + 1
-    }
-  }
-}
-
-console.log(binarySearch([1,2,3,4,5,6,7], 3))
