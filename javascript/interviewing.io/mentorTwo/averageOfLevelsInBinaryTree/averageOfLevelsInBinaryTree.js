@@ -19,18 +19,28 @@
 // The number of nodes in the tree is in the range [1, 104].
 // -231 <= Node.val <= 231 - 1
 
-// Move through tree
-// take average of levels and add to array
-// Return array
+// Create result, queue, temp arrays
+// Create sum and count
+// Push root to que to start
+// While loop runs length of temp and queue
+
+// Create node which shifts one from queue, ad value to sum, increse count
+
+// If value exists in node left push to temp, same with right
+
+// If queue is empty then push sum / count to results, reset sum and count, set temp to queue and reset temp
+
+// Return results
 
 const averageOfLevelsInBinaryTree = (root) => {
   let results = []
   let queue = []
-  let sum = 0
-  let count = 0
   let temp = []
+  let count = 0
+  let sum = 0
+
   queue.push(root)
-  while(queue.length > 0 || temp.length > 0) {
+  while (queue.length > 0 || temp.length > 0) {
     let node = queue.shift()
     sum += node.val
     count += 1
@@ -44,13 +54,12 @@ const averageOfLevelsInBinaryTree = (root) => {
 
     if (queue.length === 0) {
       results.push(sum/count)
-      sum = 0
       count = 0
+      sum = 0
       queue = temp
       temp = []
     }
   }
-
   return results
 }
 
