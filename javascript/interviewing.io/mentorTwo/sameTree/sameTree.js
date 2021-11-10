@@ -23,10 +23,16 @@
 // The number of nodes in both trees is in the range [0, 100].
 // -104 <= Node.val <= 104
 
-const sameTree = (treeOne, treeTwo) => {
+// loop through first tree and add each node to an array
+// loop through second node and check if the first item is the same as the current node. If not return false. If so pop it and move on
+// return true
 
+const isSameTree = (treeOne, treeTwo) => {
+      if (!treeOne && !treeTwo) return true
+      if (!treeOne || !treeTwo) return false
+      return treeOne.val === treeTwo.val && isSameTree(treeOne.left, treeTwo.left) && isSameTree(treeOne.right, treeTwo.right)
 }
 
-console.log(sameTree([1,2,3], [1,2,3]))
-console.log(sameTree([1,2], [1,null,2]))
-console.log(sameTree([1,2,1], [1,1,2]))
+console.log(isSameTree([1,2,3], [1,2,3]))
+console.log(isSameTree([1,2], [1,null,2]))
+console.log(isSameTree([1,2,1], [1,1,2]))
