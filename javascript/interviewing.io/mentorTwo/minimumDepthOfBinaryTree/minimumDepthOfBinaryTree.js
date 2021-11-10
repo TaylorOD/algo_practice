@@ -19,15 +19,15 @@
 const minDepth = (root) => {
   let minDepth = 1
   let queue = []
+
   if (!root) {
     return 0
   }
-  if(!root.left && !root.right) {
+  if (!root.right && !root.left) {
     return minDepth
   }
 
   queue.push(root)
-
   while (queue.length > 0) {
     let queueLength = queue.length
 
