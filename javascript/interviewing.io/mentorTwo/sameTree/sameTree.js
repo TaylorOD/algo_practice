@@ -27,10 +27,14 @@
 // loop through second node and check if the first item is the same as the current node. If not return false. If so pop it and move on
 // return true
 
+// Base case - if both trees are not the same at the same time - true
+// false if one tree is not the same using or
+// Recursive call if they both equal each other and call with left tree and call with right tree
+
 const isSameTree = (treeOne, treeTwo) => {
-      if (!treeOne && !treeTwo) return true
-      if (!treeOne || !treeTwo) return false
-      return treeOne.val === treeTwo.val && isSameTree(treeOne.left, treeTwo.left) && isSameTree(treeOne.right, treeTwo.right)
+  if (!treeOne && !treeTwo) return true
+  if (!treeOne || !treeTwo) return false
+  return treeOne.val === treeTwo.val && isSameTree(treeOne.left, treeTwo.left) && isSameTree(treeOne.right, treeTwo.right)
 }
 
 console.log(isSameTree([1,2,3], [1,2,3]))
