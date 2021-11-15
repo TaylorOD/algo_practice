@@ -29,7 +29,7 @@ const pathSum = (root, targetSum) => {
     return targetSum === root.val
   } else {
     // continue DFS
-    return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val)
+    return pathSum(root.left, targetSum - root.val) || pathSum(root.right, targetSum - root.val)
   }
 }
 // Call function with test inputs
