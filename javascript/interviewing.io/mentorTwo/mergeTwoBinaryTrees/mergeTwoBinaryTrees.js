@@ -18,20 +18,25 @@
 // Input: root1 = [1], root2 = [1,2]
 // Output: [2,2]
 
+// if root one or two dont exists return the other root
+// Add root1 value with root values
+// root left = to recusive call root 1 left and root 2 left
+// same for root right
+// return root1
+
 const mergeTwoBinaryTrees = (root1, root2) => {
-  if (root1 === null) {
-    return root2
-  }
-  if (root2 === null) {
+    if (root1 === null) {
+      return root2
+    }
+    if (root2 === null) {
+      return root1
+    }
+    root1.val += root2.val
+
+    root1.left = mergeTwoBinaryTrees(root1.left, root2.left)
+    root1.right = mergeTwoBinaryTrees(root1.right, root2.right)
+
     return root1
-  }
-
-  root1.val += root2.val
-
-  root1.left = mergeTrees(root1.left, root2.left)
-  root1.right = mergeTrees(root1.right, root2.right)
-
-  return root1
 }
 
 console.log(mergeTwoBinaryTrees([1, 3, 2, 5], [2, 1, 3, null, 4, null, 7]))
