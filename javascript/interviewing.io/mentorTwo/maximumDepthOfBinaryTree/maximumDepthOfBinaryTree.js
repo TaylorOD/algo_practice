@@ -28,19 +28,19 @@ const maxDepthOfBinaryTree = (root) => {
   if (!root) {
     return 0
   }
-  let level = 0
+  let levels = 0
   let queue = []
   queue.push(root)
 
   while (queue.length > 0) {
     let length = queue.length
     for (let index = 0; index < length; index += 1) {
-      const node = queue.shift()
-      if (node.right) {
-        queue.push(node.right)
-      }
+      let node = queue.shift()
       if (node.left) {
         queue.push(node.left)
+      }
+      if (node.right) {
+        queue.push(node.right)
       }
     }
     level += 1
