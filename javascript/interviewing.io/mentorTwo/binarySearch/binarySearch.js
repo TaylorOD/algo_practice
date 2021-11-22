@@ -45,11 +45,12 @@ const binarySearchLeet = (inputArray, target) => {
     } else if (inputArray[middle] < target) {
       low = middle + 1
     } else {
-      high = middle - 1
+      high = middle -1
     }
   }
   return -1
 }
+
 
 console.log(binarySearchLeet([-1, 0, 3, 5, 9, 12], 9))
 console.log(binarySearchLeet([-1, 0, 3, 5, 9, 12], 2))
