@@ -28,7 +28,7 @@ const maxDepthOfBinaryTree = (root) => {
   if (!root) {
     return 0
   }
-  let levels = 0
+  let level = 0
   let queue = []
   queue.push(root)
 
