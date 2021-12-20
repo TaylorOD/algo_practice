@@ -25,20 +25,24 @@
 var solution = function (isBadVersion) {
   return function (n) {
     // Implement binary search
-    let left = 1
-    let right = n
+    let left = 1 // Left if set at 1 since 1 is the first version
+    let right = n // right is set as n since it is the number of versions given
     // Create loop
     while (left < right) {
       // Create middle
       let middle = Math.floor((left + right) / 2)
       // Pass middle into is bad version
       if (isBadVersion(middle)) {
+        // If bad version is true then update right to be middle - cut off right side of versions
+        // Now check if there is another bad version that is a lower version number
         right = middle
+        // if the version is good then update left side to be the middle plus one. If we have one good version then all following at good
       } else {
         left = middle + 1
       }
+      // Left and right will be the same
     }
-    // Return left
+    // Return left which will be the first bad version
     return left
   }
 }
