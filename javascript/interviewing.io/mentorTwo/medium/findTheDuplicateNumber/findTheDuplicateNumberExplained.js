@@ -59,22 +59,3 @@ const findTheDuplicateNumber = (inputArray) => {
 // console.log(findTheDuplicateNumber([3, 1, 3, 4, 2]))
 // console.log(findTheDuplicateNumber([1, 1]))
 // console.log(findTheDuplicateNumber([1, 1, 2]))
-
-
-var findDisappearedNumbers = function (nums) {
-  let stored = []
-  let result = []
-  for (let index = 0; index < nums.length; index += 1) {
-    stored.push(nums[index])
-  }
-  for (let index = 0; index < nums.length; index += 1) {
-    if (stored[index] !== index) {
-      // result.push(index)
-      console.log(index)
-    }
-  }
-  return result
-}
-
-console.log(findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1]))
-console.log(findDisappearedNumbers([1, 1]))
