@@ -35,15 +35,15 @@ const squaresOfSortedArray = (inputArray) => {
   return squaredArray
 }
 
-console.log(squaresOfSortedArray([-4, -1, 0, 3, 10]))
-console.log(squaresOfSortedArray([-7, -3, 2, 3, 11]))
+// console.log(squaresOfSortedArray([-4, -1, 0, 3, 10]))
+// console.log(squaresOfSortedArray([-7, -3, 2, 3, 11]))
 
 const sortedSquares = function (inputArray) {
   let result = []
   let left = 0
   let right = inputArray.length - 1
 
-  for (let index = inputArray.length - 1; index >= 0; index--) {
+  for (let index = inputArray.length - 1; index >= 0; index += 1) {
     if (Math.abs(inputArray[left]) < Math.abs(inputArray[right])) {
       result[index] = inputArray[right] ** 2
       right -= 1
