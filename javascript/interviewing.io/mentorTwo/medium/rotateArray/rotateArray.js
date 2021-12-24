@@ -36,6 +36,19 @@ const rotateArray = (inputArray, rotateNumber) => {
   }
   return inputArray
 }
-
 console.log(rotateArray([1, 2, 3, 4, 5, 6, 7], 3))
 console.log(rotateArray([-1, -100, 3, 99], 2))
+
+// Leet solution
+const rotateArrayLeet = (inputArray, rotateNumber) => {
+  for (let index = inputArray.length - 1; index >= 0; index -=1) {
+    inputArray[index + rotateNumber] = inputArray[index]
+  }
+  for (let indexTwo = rotateNumber - 1; indexTwo >= 0; indexTwo -= 1) {
+    inputArray[indexTwo] = inputArray.pop()
+  }
+  return inputArray
+}
+
+console.log(rotateArrayLeet([1, 2, 3, 4, 5, 6, 7], 3))
+console.log(rotateArrayLeet([-1, -100, 3, 99], 2))
