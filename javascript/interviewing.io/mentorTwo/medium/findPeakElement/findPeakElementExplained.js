@@ -41,4 +41,5 @@ const findPeak = (inputArray) => {
 }
 // Call out function with test inputs
 console.log(findPeak([1, 2, 3, 1]))
+console.log(findPeak([1, 3, 5, 3, 1]))
 console.log(findPeak([1, 2, 1, 3, 5, 6, 4]))
