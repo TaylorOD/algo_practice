@@ -34,3 +34,18 @@ const moveZeros = (inputArray) => {
 console.log(moveZeros([0, 1, 0, 3, 12]))
 console.log(moveZeros([0]))
 console.log(moveZeros([0, 1, 0]))
+
+const moveZerosLeet = (inputArray) => {
+  let nonZero = 0
+  for (let index = 0; index < inputArray.length; index += 1) {
+    if (inputArray[index] !== 0) {
+      inputArray[nonZero] = inputArray[index]
+      inputArray[index] = nonZero === index ? inputArray[index] : 0
+      nonZero += 1
+    }
+  }
+}
+
+console.log(moveZerosLeet([0, 1, 0, 3, 12]))
+console.log(moveZerosLeet([0]))
+console.log(moveZerosLeet([0, 1, 0]))
