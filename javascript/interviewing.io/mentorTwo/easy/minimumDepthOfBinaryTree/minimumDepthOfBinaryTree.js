@@ -52,3 +52,38 @@ const minDepth = (root) => {
 
 console.log(minDepth([3, 9, 20, null, null, 15, 7]))
 console.log(minDepth([2, null, 3, null, 4, null, 5, null, 6]))
+
+
+const minimumDepthOfBinaryTreeLeet = (root) => {
+  if (!root) {
+    return 0
+  }
+  if (!root.left && !root.right) {
+    return 1
+  }
+  let queue = []
+  let minDepth = 1
+  queue.push(root)
+
+  while (queue.length > 0) {
+    let queueLength = queue.length
+    for (let index = 0; index < queueLength; index += 1) {
+      let node = queue.shift()
+      if (!node.right && !node.left) {
+        return minDepth
+      } else {
+        if (node.right != null) {
+          queue.push(node.right)
+        }
+        if (node.left != null) {
+          queue.push(node.left)
+        }
+      }
+    }
+    minDepth += 1
+  }
+  return minDepth
+}
+
+console.log(minimumDepthOfBinaryTreeLeet([3, 9, 20, null, null, 15, 7]))
+console.log(minimumDepthOfBinaryTreeLeet([2, null, 3, null, 4, null, 5, null, 6]))
