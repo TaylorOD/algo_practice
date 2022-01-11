@@ -43,3 +43,46 @@ const isSameTree = (treeOne, treeTwo) => {
 console.log(isSameTree([1, 2, 3], [1, 2, 3]))
 console.log(isSameTree([1, 2], [1, null, 2]))
 console.log(isSameTree([1, 2, 1], [1, 1, 2]))
+
+// Create function that takes in two trees
+const isSameTreeLeet = (treeOne, treeTwo) => {
+  // Put both trees into an array
+  let queueOne = [treeOne]
+  let queueTwo = [treeTwo]
+  // Create a while loop that runs while both trees have length
+  while (queueOne.length && queueTwo.length) {
+    // Pull a node from each tree
+    let nodeOne = queueOne.shift()
+    let nodeTwo = queueTwo.shift()
+
+    // If either node is undefined or the values dont match then return false
+    if (nodeOne && nodeTwo && nodeOne.val !== nodeTwo.val) {
+      return false
+    }
+    // If node one and node two dont match return false
+    if (nodeOne && !nodeTwo) {
+      return false
+    }
+    // If node one and node two dont match return false
+    if (nodeTwo && !nodeOne) {
+      return false
+    }
+    // If nodeOne exists then push the leaf nodes into queue one
+    if (nodeOne) {
+      queueOne.push(nodeOne.left)
+      queueOne.push(nodeOne.right)
+    }
+    // If nodeTwo exists then push the leaf nodes into queue Two
+    if (nodeTwo) {
+      queueTwo.push(nodeTwo.left)
+      queueTwo.push(nodeTwo.right)
+    }
+  }
+  // If it gets through and both are zero length then return true else false
+  // Could return true here really
+  return queueOne.length === 0 && queueTwo.length === 0
+}
+
+console.log(isSameTreeLeet([1, 2, 3], [1, 2, 3]))
+console.log(isSameTreeLeet([1, 2], [1, null, 2]))
+console.log(isSameTreeLeet([1, 2, 1], [1, 1, 2]))
