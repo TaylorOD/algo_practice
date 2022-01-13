@@ -80,7 +80,7 @@ const isSameTreeLeet = (treeOne, treeTwo) => {
   }
   // If it gets through and both are zero length then return true else false
   // Could return true here really
-  return queueOne.length === 0 && queueTwo.length === 0
+  return true
 }
 
 console.log(isSameTreeLeet([1, 2, 3], [1, 2, 3]))
