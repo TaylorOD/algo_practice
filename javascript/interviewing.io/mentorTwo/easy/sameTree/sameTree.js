@@ -40,3 +40,36 @@ const isSameTree = (treeOne, treeTwo) => {
 console.log(isSameTree([1,2,3], [1,2,3]))
 console.log(isSameTree([1,2], [1,null,2]))
 console.log(isSameTree([1,2,1], [1,1,2]))
+
+const sameTreeIt = (treeOne, treeTwo) => {
+  let queueOne = [treeOne]
+  let queueTwo = [treeTwo]
+  while (queueOne.length !== 0 && queueTwo.length !== 0) {
+    let nodeOne = queueOne.shift()
+    let nodeTwo = queueTwo.shift()
+
+    if (nodeOne && nodeTwo && nodeOne.val !== nodeTwo.val) {
+      return false
+    }
+    if (nodeOne && !nodeTwo) {
+      return false
+    }
+    if (nodeTwo && !nodeOne) {
+      return false
+    }
+
+    if (nodeOne) {
+      queueOne.push(nodeOne.right)
+      queueOne.push(nodeOne.left)
+    }
+    if (nodeTwo) {
+      queueTwo.push(nodeTwo.right)
+      queueTwo.push(nodeTwo.left)
+    }
+  }
+  return true
+}
+
+console.log(isSameTreeIt([1, 2, 3], [1, 2, 3]))
+console.log(isSameTreeIt([1, 2], [1, null, 2]))
+console.log(isSameTreeIt([1, 2, 1], [1, 1, 2]))
