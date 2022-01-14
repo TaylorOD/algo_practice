@@ -64,3 +64,53 @@ const averageOfLevelsInBinaryTree = (root) => {
 // Call our function with test inputs
 console.log(averageOfLevelsInBinaryTree([3, 9, 20, null, null, 15, 7]))
 console.log(averageOfLevelsInBinaryTree([3, 9, 20, 15, 7]))
+
+
+// Create function that takes in root list
+const averageOfLevels2022 = (root) => {
+  // Create queue which we will use to move through list
+  let queue = []
+  // Create result where we will store our averages
+  let result = []
+  // Create temp which we will use to store children of our nodes
+  let temp = []
+  // Create sum and count which we will use to find averages
+  let sum = 0
+  let count = 0
+  // Push the root to our queue
+  queue.push(root)
+  // While the queue or the temp have values in them run this loop
+  while (queue.length > 0 || temp.length > 0) {
+    // Create our node by pulling the topmost item from our root
+    let node = queue.shift()
+    // Add our nodes value to the sum
+    sum += node.val
+    // Increase our count by 1
+    count += 1
+    // If we have a right child node value then add it to our temp
+    if (node.right != null) {
+      temp.push(node.right)
+    }
+    // If we have a left child node value then add it to our temp
+    if (node.left != null) {
+      temp.push(node.left)
+    }
+    // If our queue is empty - That meaning this level of our tree is empty
+    if (queue.length === 0) {
+      // Then add that levels average to our results
+      result.push(sum/count)
+      // Reset count and sum to 0
+      count = 0
+      sum = 0
+      // Make the queue move down to our next level, if there is one, which would be the stored values in temp
+      queue = temp
+      // Reset temp
+      temp = []
+    }
+  }
+  // Return our result
+  return result
+}
+// Call our function with test inputs
+console.log(averageOfLevels2022([3, 9, 20, null, null, 15, 7]))
+console.log(averageOfLevels2022([3, 9, 20, 15, 7]))
