@@ -35,7 +35,7 @@ const binarySearch = (inputArray, target) => {
 console.log(binarySearch([-1, 0, 3, 5, 9, 12], 9))
 console.log(binarySearch([-1, 0, 3, 5, 9, 12], 2))
 
-const binarySearchLeet = (inputArray, target) => {
+const binarySearch = (inputArray, target) => {
   let left = 0
   let right = inputArray.length - 1
   while (left <= right) {
@@ -54,3 +54,20 @@ const binarySearchLeet = (inputArray, target) => {
 
 console.log(binarySearchLeet([-1, 0, 3, 5, 9, 12], 9))
 console.log(binarySearchLeet([-1, 0, 3, 5, 9, 12], 2))
+
+
+const binarySearch1232022 = (inputArray, target) => {
+  let left = 0
+  let right = inputArray.length - 1
+  while (left <= right) {
+    let middle = Math.floor((left + right) / 2)
+    if (inputArray[middle] === target) {
+      return middle
+    } else if (inputArray[middle] < target) {
+      left = middle + 1
+    } else {
+      right = middle = 1
+    }
+  }
+  return -1
+}
