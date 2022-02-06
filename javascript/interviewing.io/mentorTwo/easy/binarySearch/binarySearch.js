@@ -66,7 +66,7 @@ const binarySearch1232022 = (inputArray, target) => {
     } else if (inputArray[middle] < target) {
       left = middle + 1
     } else {
-      right = middle = 1
+      right = middle - 1
     }
   }
   return -1
