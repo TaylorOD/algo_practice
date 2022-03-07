@@ -1,0 +1,66 @@
+body  {
+  color: darkblue;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 54;
+  text-transform: uppercase;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#gameboard {
+  width: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px;
+}
+
+.box {
+  height: 150px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 150px;
+  color: black;
+  cursor: pointer;
+}
+
+.box0,.box1,.box2 {
+  border-bottom: 3px solid darkblue;
+}
+.box3,.box4,.box5 {
+  border-bottom: 3px solid darkblue;
+}
+.box0,.box3,.box6 {
+  border-right: 3px solid darkblue;
+}
+.box2,.box5,.box8 {
+  border-left: 3px solid darkblue;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: darkblue;
+  color: white;
+  border-color: darkblue;
+  transition: 200ms transform;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: translateY(-2px);
+}
